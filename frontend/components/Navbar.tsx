@@ -1,5 +1,6 @@
 
 import Link from "next/link";
+import ThemeToggle from "./ThemeToggle";
 
 const links = [
   { label: "Home", href: "/" },
@@ -14,7 +15,7 @@ export default function Navbar() {
   return (
     <header className="navbar">
       <Link href="/" className="brand" aria-label="Alvitoz Technology home">
-        <span className="brand-mark">A</span>
+        {/* <span className="brand-mark">A</span> */}
         <span>
           ALVITOZ
           <small>TECHNOLOGY</small>
@@ -29,9 +30,16 @@ export default function Navbar() {
         ))}
       </nav>
 
-      <Link href="/contact" className="button button-primary nav-cta">
-        Let&apos;s Talk <span>↗</span>
-      </Link>
+      <div className="navbar-actions">
+    <ThemeToggle />
+
+    <Link
+      href="/contact"
+      className="button button-primary nav-cta"
+    >
+      Let's Talk <span>↗</span>
+    </Link>
+  </div>
     </header>
   );
 }

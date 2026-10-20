@@ -1,9 +1,10 @@
 
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "About Us | Alvitoz Technology",
   description:
     "Discover the mission, values, and approach behind Alvitoz Technology.",
 };
@@ -38,7 +39,7 @@ const values = [
 export default function AboutPage() {
   return (
     <>
-      <section className="page-hero">
+      <section className="page-hero about-page-hero">
         <div className="page-hero-inner">
           <span className="eyebrow">GET TO KNOW US</span>
           <h1>
@@ -55,7 +56,16 @@ export default function AboutPage() {
             Let&apos;s Work Together →
           </Link>
         </div>
-        <div className="about-hero-decoration">A</div>
+
+        <div className="about-hero-image">
+          <Image
+            src="/images/hero-about.jpg"
+            alt="The Alvitoz team collaborating on digital solutions"
+            width={800}
+            height={500}
+            priority
+          />
+        </div>
       </section>
 
       <section className="section">
@@ -138,19 +148,21 @@ export default function AboutPage() {
 
       <section className="section">
         <div className="final-cta">
-          <span className="eyebrow">YOUR IDEA, OUR NEXT CHALLENGE</span>
-          <h2>
-            Let&apos;s create something
-            <br />
-            <span>meaningful together.</span>
-          </h2>
-          <p>
-            Have a vision for your next digital product? We&apos;d love to
-            hear about it.
-          </p>
-          <Link href="/contact" className="button button-light">
-            Start a Conversation ↗
-          </Link>
+          <div className="final-cta-content">
+            <span className="eyebrow">YOUR IDEA, OUR NEXT CHALLENGE</span>
+            <h2>
+              Let&apos;s create something
+              <br />
+              <span>meaningful together.</span>
+            </h2>
+            <p>
+              Have a vision for your next digital product? We&apos;d love to
+              hear about it.
+            </p>
+            <Link href="/contact" className="button button-light">
+              Start a Conversation ↗
+            </Link>
+          </div>
         </div>
       </section>
     </>

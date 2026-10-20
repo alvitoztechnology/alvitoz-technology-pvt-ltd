@@ -1,60 +1,61 @@
 
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Our Portfolio",
   description:
-    "Explore selected digital projects and solutions from Alvitoz Technology.",
+    "Explore digital project concepts and solutions from Alvitoz Technology.",
 };
 
 const projects = [
   {
     number: "01",
-    category: "WEB DEVELOPMENT",
-    title: "Business Website",
+    category: "WEB APPLICATION",
+    title: "Business Management Platform",
     description:
-      "A responsive digital presence designed to communicate a brand, showcase services, and generate enquiries.",
+      "A business workspace concept designed to organize information and simplify everyday operations.",
     tags: ["Next.js", "TypeScript", "Responsive UI"],
-    style: "project-visual-one",
-    mark: "A.",
+    image: "/images/project-business-management.png",
+    imageAlt: "Business management dashboard concept",
   },
   {
     number: "02",
-    category: "BACKEND ENGINEERING",
-    title: "Task Management Platform",
+    category: "MOBILE APPLICATION",
+    title: "E-commerce Mobile App",
     description:
-      "A productivity platform concept for managing tasks, tracking time, and reviewing daily progress.",
-    tags: ["Node.js", "PostgreSQL", "REST API"],
-    style: "project-visual-two",
-    mark: "T.",
+      "A mobile shopping experience concept focused on product discovery and a straightforward customer journey.",
+    tags: ["Mobile UI", "User Experience", "Responsive Design"],
+    image: "/images/project-ecommerce-mobile.png",
+    imageAlt: "E-commerce mobile application concept",
   },
   {
     number: "03",
     category: "DASHBOARD DESIGN",
     title: "Business Analytics Dashboard",
     description:
-      "A dashboard concept that organizes important business information into a clear, actionable interface.",
+      "An analytics interface concept that presents business metrics and data visualizations in one place.",
     tags: ["React", "Data Visualization", "UI Design"],
-    style: "project-visual-three",
-    mark: "D.",
+    image: "/images/project-analytics.png",
+    imageAlt: "Business analytics dashboard concept",
   },
 ];
 
 export default function PortfolioPage() {
   return (
     <>
-      <section className="page-hero">
+      <section className="page-hero portfolio-hero">
         <div className="page-hero-inner">
-          <span className="eyebrow">OUR WORK</span>
+          <span className="eyebrow">✦ OUR PORTFOLIO</span>
           <h1>
-            Ideas into impact.
+            Our Work.
             <br />
-            <span className="gradient-text">Built with purpose.</span>
+            <span className="gradient-text">Ideas into impact.</span>
           </h1>
           <p>
-            Explore selected project concepts that demonstrate our approach to
-            thoughtful design, dependable engineering, and useful technology.
+            Explore digital product concepts and experiences that demonstrate
+            our approach to thoughtful design and dependable engineering.
           </p>
           <Link href="/contact" className="button button-primary">
             Discuss Your Project →
@@ -63,7 +64,7 @@ export default function PortfolioPage() {
         <div className="about-hero-decoration">P</div>
       </section>
 
-      <section className="section">
+      <section className="section portfolio-section">
         <div className="section-heading">
           <span className="eyebrow">SELECTED PROJECTS</span>
           <h2>
@@ -72,25 +73,31 @@ export default function PortfolioPage() {
             <span className="gradient-text">Engineered to grow.</span>
           </h2>
           <p>
-            A look at the kinds of digital experiences and systems we can
-            create for businesses.
+            Explore examples of digital experiences and systems designed
+            around business needs.
           </p>
         </div>
 
-        <div className="portfolio-grid">
+        <div className="portfolio-grid portfolio-image-grid">
           {projects.map((project) => (
-            <article className="project-card" key={project.number}>
-              <div className={`project-visual ${project.style}`}>
-                <span className="project-visual-mark">{project.mark}</span>
-                <span className="project-visual-label">
-                  ALVITOZ / {project.number}
+            <article className="project-card portfolio-image-card" key={project.number}>
+              <div className="portfolio-image-wrap">
+                <Image
+                  src={project.image}
+                  alt={project.imageAlt}
+                  width={380}
+                  height={195}
+                  className="portfolio-project-image"
+                />
+                <span className="portfolio-image-number">
+                  {project.number}
                 </span>
-                <span className="project-orbit project-orbit-one" />
-                <span className="project-orbit project-orbit-two" />
               </div>
 
               <div className="project-content">
-                <span className="eyebrow">{project.category}</span>
+                <span className="portfolio-category">
+                  {project.category}
+                </span>
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
 
@@ -101,20 +108,24 @@ export default function PortfolioPage() {
                     </span>
                   ))}
                 </div>
+
+                <Link href="/contact" className="portfolio-project-link">
+                  Discuss a Similar Project <span>↗</span>
+                </Link>
               </div>
             </article>
           ))}
         </div>
 
         <p className="portfolio-note">
-          These are illustrative project concepts, not verified client
-          engagements. Replace them with your real projects before presenting
-          this portfolio to customers.
+          These images and project descriptions are illustrative concepts,
+          not verified client engagements. Replace them with real work or
+          label them clearly before publishing.
         </p>
       </section>
 
       <section className="section">
-        <div className="final-cta">
+        <div className="final-cta portfolio-cta">
           <span className="eyebrow">YOUR PROJECT COULD BE NEXT</span>
           <h2>
             Have an idea?
@@ -122,8 +133,8 @@ export default function PortfolioPage() {
             <span>Let&apos;s make it real.</span>
           </h2>
           <p>
-            Share your goals with us and let&apos;s explore the right solution
-            for your business.
+            Share your goals with us and let&apos;s explore the right digital
+            solution for your business.
           </p>
           <Link href="/contact" className="button button-light">
             Start a Conversation ↗
