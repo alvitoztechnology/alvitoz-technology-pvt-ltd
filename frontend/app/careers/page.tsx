@@ -1,6 +1,7 @@
 
 import type { Metadata } from "next";
 import Link from "next/link";
+import "./careers.css";
 
 export const metadata: Metadata = {
   title: "Careers",
@@ -61,7 +62,8 @@ const openings = [
 
 export default function CareersPage() {
   return (
-    <>
+    
+    <main className="careers-page">
       <section className="page-hero">
         <div className="page-hero-inner">
           <span className="eyebrow">CAREERS AT ALVITOZ</span>
@@ -180,6 +182,8 @@ export default function CareersPage() {
           </Link>
         </div>
       </section>
-    </>
+    </main>
+      
+    
   );
 }

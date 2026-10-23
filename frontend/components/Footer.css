@@ -1,105 +1,755 @@
 
 /* =========================================
-   ALVITOZ TECHNOLOGY — FOOTER
-   ========================================= */
+   ALVITOZ TECHNOLOGY — PREMIUM FOOTER
+========================================= */
 
-   .footer {
-    padding: 48px 5% 22px;
-    background: #17141b;
-    color: #f8f4f7;
-    border-top: 1px solid #302832;
+.footer {
+  --footer-pink: #ff5c9a;
+  --footer-bright-pink: #ff74ad;
+  --footer-text: #e8dce4;
+  --footer-muted: #b9aab5;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  width: 100%;
+  padding: 30px 7.1% 0;
+
+  color: var(--footer-text);
+
+  background:
+    radial-gradient(
+      ellipse at 78% 35%,
+      rgba(92, 14, 48, 0.2),
+      transparent 45%
+    ),
+    linear-gradient(
+      115deg,
+      #100c10 0%,
+      #180d15 52%,
+      #1b0b15 100%
+    );
+
+  border-top: 1px solid rgba(255, 103, 159, 0.1);
+}
+
+/* =========================================
+   DECORATIVE DIGITAL GLOBE
+========================================= */
+
+.footer-globe {
+  position: absolute;
+  z-index: -1;
+
+  top: -112px;
+  right: -96px;
+
+  width: 355px;
+  height: 355px;
+
+  pointer-events: none;
+  opacity: 0.88;
+}
+
+.footer-globe-sphere {
+  position: absolute;
+  inset: 0;
+
+  overflow: hidden;
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      ellipse at 31% 28%,
+      rgba(255, 155, 194, 0.2),
+      transparent 19%
+    ),
+    radial-gradient(
+      ellipse at 35% 40%,
+      rgba(255, 69, 137, 0.14),
+      transparent 43%
+    ),
+    radial-gradient(
+      ellipse at 65% 60%,
+      rgba(237, 23, 69, 0.2),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle,
+      transparent 49%,
+      rgba(255, 83, 147, 0.5) 50%,
+      transparent 50.8%
+    );
+
+  border: 1px solid rgba(255, 105, 162, 0.42);
+
+  box-shadow:
+    inset 18px 0 45px rgba(255, 68, 134, 0.15),
+    inset -24px 0 65px rgba(237, 23, 69, 0.16),
+    0 0 45px rgba(237, 23, 69, 0.1);
+
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    black 25%,
+    black 100%
+  );
+
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    black 25%,
+    black 100%
+  );
+}
+
+/* Digital particle texture */
+.footer-globe-sphere::before {
+  content: "";
+  position: absolute;
+  inset: -10%;
+
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 105, 163, 0.95) 1px,
+    transparent 1.5px
+  );
+
+  background-size: 6px 6px;
+
+  -webkit-mask-image:
+    radial-gradient(
+      ellipse at 53% 28%,
+      black 0%,
+      transparent 27%
+    ),
+    radial-gradient(
+      ellipse at 65% 58%,
+      black 0%,
+      transparent 37%
+    ),
+    radial-gradient(
+      ellipse at 35% 76%,
+      black 0%,
+      transparent 26%
+    );
+
+  mask-image:
+    radial-gradient(
+      ellipse at 53% 28%,
+      black 0%,
+      transparent 27%
+    ),
+    radial-gradient(
+      ellipse at 65% 58%,
+      black 0%,
+      transparent 37%
+    ),
+    radial-gradient(
+      ellipse at 35% 76%,
+      black 0%,
+      transparent 26%
+    );
+
+  opacity: 0.85;
+}
+
+/* Pink orbital rings */
+.footer-orbit {
+  position: absolute;
+  top: 42%;
+  left: -8%;
+
+  width: 125%;
+  height: 31%;
+
+  border: 1px solid rgba(255, 86, 151, 0.65);
+  border-radius: 50%;
+
+  transform: rotate(-28deg);
+
+  box-shadow:
+    0 0 8px rgba(255, 76, 144, 0.12),
+    inset 0 0 8px rgba(255, 76, 144, 0.08);
+}
+
+.footer-orbit-two {
+  top: 32%;
+  left: -2%;
+
+  width: 120%;
+  height: 25%;
+
+  border-color: rgba(255, 123, 174, 0.35);
+  transform: rotate(-38deg);
+}
+
+/* =========================================
+   MAIN FOOTER LAYOUT
+========================================= */
+
+.footer-main {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns: 1.2fr 0.52fr 1.35fr;
+
+  gap: 38px;
+
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+
+  padding-bottom: 20px;
+}
+
+/* =========================================
+   BRAND
+========================================= */
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  width: fit-content;
+
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 28px;
+  height: 34px;
+
+  color: transparent;
+  background: linear-gradient(
+    145deg,
+    #ff9bc5 5%,
+    #ff5c9a 48%,
+    #ed1745 100%
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  font-size: 35px;
+  font-weight: 900;
+  line-height: 1;
+
+  filter: drop-shadow(0 0 8px rgba(255, 92, 154, 0.15));
+}
+
+.footer-brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.footer-brand-text strong {
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+  line-height: 1;
+}
+
+.footer-brand-text small {
+  color: #d6c5d0;
+
+  font-size: 7px;
+  font-weight: 500;
+  letter-spacing: 3.5px;
+  line-height: 1.4;
+}
+
+.footer-description {
+  margin: 12px 0 11px;
+
+  color: var(--footer-text);
+
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+/* =========================================
+   START A PROJECT BUTTON
+========================================= */
+
+.footer-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  min-height: 27px;
+  padding: 7px 13px;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  background: linear-gradient(
+    105deg,
+    #ff4387,
+    #ff7aab
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 999px;
+
+  font-size: 9px;
+  font-weight: 500;
+
+  box-shadow: 0 4px 16px rgba(255, 53, 123, 0.15);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.footer-cta:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 7px 22px rgba(255, 53, 123, 0.3);
+}
+
+/* =========================================
+   SOCIAL ICONS
+========================================= */
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-top: 14px;
+}
+
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 18px;
+  height: 18px;
+
+  color: #f6dce7;
+  text-decoration: none;
+
+  background: rgba(255, 159, 195, 0.14);
+  border: 1px solid rgba(255, 155, 194, 0.08);
+  border-radius: 50%;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.footer-social-link:hover {
+  color: #ffffff;
+  background: #ed1745;
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   FOOTER COLUMNS
+========================================= */
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-column h3 {
+  margin: 2px 0 10px;
+
+  color: var(--footer-pink);
+
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.footer-column nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+}
+
+.footer-column nav a {
+  color: var(--footer-text);
+  text-decoration: none;
+
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 1.25;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.footer-column nav a:hover {
+  color: var(--footer-bright-pink);
+  transform: translateX(3px);
+}
+
+/* =========================================
+   COPYRIGHT BAR
+========================================= */
+
+.footer-bottom {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  width: 100%;
+  max-width: 1250px;
+  min-height: 29px;
+
+  margin: 0 auto;
+  padding: 8px 0;
+
+  border-top: 1px solid rgba(255, 178, 207, 0.19);
+}
+
+.footer-bottom p {
+  margin: 0;
+
+  color: #cdbbc6;
+
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.footer-bottom p:last-child {
+  color: #e8d8e1;
+  text-align: right;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .footer {
+    padding-right: 5%;
+    padding-left: 5%;
   }
-  
-  /* Footer brand */
-  .footer .footer-brand {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 22px;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-  }
-  
-  .footer .brand-mark {
-    display: grid;
-    place-items: center;
-    width: 42px;
-    height: 42px;
-    border-radius: 12px;
-    color: #ffffff;
-    background: linear-gradient(135deg, #ed1745, #ff4e78);
-    font-size: 24px;
-    font-weight: 900;
-  }
-  
-  .footer .footer-brand small {
-    display: block;
-    margin-top: 5px;
-    color: #c4b8c5;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 3px;
-  }
-  
-  /* Footer description */
-  .footer > p {
-    max-width: 420px;
-    margin: 18px 0 25px;
-    color: #c2b8c5;
-    font-size: 14px;
-    line-height: 1.8;
-  }
-  
-  /* Footer navigation */
-  .footer .footer-links {
-    display: flex;
-    flex-wrap: wrap;
+
+  .footer-main {
+    grid-template-columns: 1.1fr 0.7fr 1.2fr;
     gap: 24px;
-    padding: 22px 0;
-    border-top: 1px solid #38303a;
-    border-bottom: 1px solid #38303a;
   }
-  
-  .footer .footer-links a {
-    color: #d7cdd8;
-    font-size: 13px;
-    text-decoration: none;
-    transition: color 0.2s ease;
+
+  .footer-globe {
+    right: -165px;
+    opacity: 0.65;
   }
-  
-  .footer .footer-links a:hover {
-    color: #ff4e78;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 28px 6% 0;
   }
-  
-  /* Copyright row */
-  .footer .footer-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 12px;
-  
-    padding-top: 22px;
-    color: #a99eac;
+
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 18px;
+
+    padding-bottom: 24px;
+  }
+
+  .footer-brand-column {
+    grid-column: 1 / -1;
+  }
+
+  .footer-description {
+    font-size: 11px;
+  }
+
+  .footer-column h3 {
+    font-size: 10px;
+  }
+
+  .footer-column nav {
+    gap: 10px;
+  }
+
+  .footer-column nav a {
+    font-size: 10px;
+  }
+
+  .footer-social-link {
+    width: 24px;
+    height: 24px;
+  }
+
+  .footer-social-link svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .footer-globe {
+    top: -30px;
+    right: -200px;
+    opacity: 0.4;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+
+    padding: 12px 0;
+  }
+
+  .footer-bottom p {
+    font-size: 9px;
+  }
+
+  .footer-bottom p:last-child {
+    text-align: left;
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .footer-cta,
+  .footer-social-link,
+  .footer-column nav a {
+    transition: none;
+  }
+}
+
+.footer-social-link span {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+
+/* =========================================
+   LARGER PREMIUM FOOTER OVERRIDES
+========================================= */
+
+.footer {
+  padding: 48px 5.5% 0;
+}
+
+.footer-main {
+  max-width: 1450px;
+  grid-template-columns: 1.2fr 0.65fr 1.45fr;
+  gap: 60px;
+  padding-bottom: 38px;
+}
+
+/* Brand */
+.footer-brand {
+  gap: 13px;
+}
+
+.footer-brand-mark {
+  width: 42px;
+  height: 48px;
+  font-size: 48px;
+}
+
+.footer-brand-text {
+  gap: 5px;
+}
+
+.footer-brand-text strong {
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+
+.footer-brand-text small {
+  font-size: 9px;
+  letter-spacing: 4px;
+}
+
+.footer-description {
+  margin: 18px 0 16px;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.footer-cta {
+  min-height: 40px;
+  padding: 10px 19px;
+  gap: 12px;
+  font-size: 12px;
+}
+
+.footer-socials {
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.footer-social-link {
+  width: 30px;
+  height: 30px;
+}
+
+.footer-social-link svg {
+  width: 15px;
+  height: 15px;
+}
+
+.footer-social-link span {
+  font-size: 14px;
+}
+
+/* Link columns */
+.footer-column h3 {
+  margin: 5px 0 18px;
+  font-size: 13px;
+}
+
+.footer-column nav {
+  gap: 12px;
+}
+
+.footer-column nav a {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Copyright */
+.footer-bottom {
+  max-width: 1450px;
+  min-height: 48px;
+  padding: 14px 0;
+}
+
+.footer-bottom p {
+  font-size: 11px;
+}
+
+/* Larger decorative globe */
+.footer-globe {
+  width: 440px;
+  height: 440px;
+  top: -125px;
+  right: -100px;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .footer {
+    padding: 38px 5% 0;
+  }
+
+  .footer-main {
+    gap: 30px;
+    grid-template-columns: 1.1fr 0.75fr 1.2fr;
+  }
+
+  .footer-globe {
+    width: 350px;
+    height: 350px;
+    right: -150px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 30px 6% 0;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 20px;
+    padding-bottom: 28px;
+  }
+
+  .footer-brand-column {
+    grid-column: 1 / -1;
+  }
+
+  .footer-brand-mark {
+    width: 36px;
+    height: 42px;
+    font-size: 42px;
+  }
+
+  .footer-brand-text strong {
+    font-size: 15px;
+  }
+
+  .footer-brand-text small {
+    font-size: 8px;
+  }
+
+  .footer-description {
     font-size: 12px;
   }
-  
-  /* Tablet and mobile */
-  @media (max-width: 650px) {
-    .footer {
-      padding: 36px 22px 20px;
-    }
-  
-    .footer .footer-links {
-      gap: 16px 22px;
-    }
-  
-    .footer .footer-bottom {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 8px;
-    }
+
+  .footer-column h3 {
+    font-size: 12px;
+    margin-bottom: 14px;
   }
-  
+
+  .footer-column nav {
+    gap: 11px;
+  }
+
+  .footer-column nav a {
+    font-size: 11px;
+  }
+
+  .footer-cta {
+    min-height: 38px;
+    font-size: 11px;
+  }
+
+  .footer-social-link {
+    width: 28px;
+    height: 28px;
+  }
+
+  .footer-bottom {
+    gap: 7px;
+    padding: 13px 0;
+  }
+
+  .footer-bottom p {
+    font-size: 10px;
+  }
+
+  .footer-globe {
+    width: 300px;
+    height: 300px;
+    top: -15px;
+    right: -195px;
+    opacity: 0.35;
+  }
+}

@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -10,6 +11,9 @@ import {
 } from "lucide-react";
 
 import "./home.css";
+import AnimatedStat from "./AnimatedStat";
+import FeaturedProjects from "./FeaturedProjects";
+
 
 const services = [
   {
@@ -45,16 +49,41 @@ const services = [
 ];
 
 const projects = [
-  { name: "Business Management Platform", type: "Web App", image: "/images/project-business-management.png", description: "A clear workspace for everyday business operations." },
-  { name: "E-commerce Mobile App", type: "Mobile App", image: "/images/project-ecommerce-mobile.png", description: "A mobile shopping experience with a simple user journey." },
-  { name: "Analytics Dashboard", type: "Web App", image: "/images/project-analytics.png", description: "A visual overview of business data and performance." },
+  {
+    name: "Foodvito",
+    type: "Food Delivery App",
+    image: "/images/foodvito.png",
+    description:
+      "A food ordering and delivery platform built around lower commissions, convenient ordering, and better earning opportunities for restaurants and food partners.",
+  },
+  {
+    name: "Ravito",
+    type: "Transportation App",
+    image: "/images/ravito.png",
+    description:
+      "A ride-booking platform focused on affordable transportation, lower commissions, and better earning opportunities for drivers and convenient travel for customers.",
+  },
+  {
+    name: "VitoMart",
+    type: "Shopping & Delivery App",
+    image: "/images/vitomart.png",
+    description:
+      "An online shopping platform connecting customers with local shops and everyday essentials through convenient delivery and a low-commission model that supports local businesses.",
+  },
+  {
+    name: "Dravito",
+    type: "Rider & Delivery Management App",
+    image: "/images/dravito.png",
+    description:
+      "A unified rider platform connecting Foodvito, Ravito, and VitoMart, enabling delivery partners to manage orders across multiple services from one application and access more earning opportunities.",
+  },
 ];
 
 const stats = [
-  { number: "0", label: "Projects Delivered", icon: "▣" },
-  { number: "0", label: "Happy Clients", icon: "✿" },
-  { number: "2", label: "Team Members", icon: "♧" },
-  { number: "1", label: "Years Experience", icon: "♙" },
+  { number: "10", label: "Projects Delivered", icon: "▣" },
+  { number: "9", label: "Happy Clients", icon: "✿" },
+  { number: "10", label: "Team Members", icon: "♧" },
+  { number: "5", label: "Years Experience", icon: "♙" },
 ];
 
 export default function Home() {
@@ -71,18 +100,33 @@ export default function Home() {
           </div>
         </div>
         <div className="alv-hero-art">
-          <Image src="/images/hero-home.png" alt="Alvitoz Technology digital solutions and laptop dashboard illustration" width={594} height={336} priority />
+        <div className="alv-orbit alv-orbit-1" />
+  <div className="alv-orbit alv-orbit-2" />
+  <div className="alv-orbit alv-orbit-3" />
+
+  <Image
+    src="/images/earth-network.png"
+    alt="Connected digital globe representing global technology solutions"
+    className="alv-earth"
+    width={600}
+    height={600}
+    priority
+  />
         </div>
       </section>
 
-      <section className="alv-stats" aria-label="Company highlights">
-        {stats.map((stat) => (
-          <div className="alv-stat" key={stat.label}>
-            <span className="alv-stat-icon">{stat.icon}</span>
-            <div><strong>{stat.number}</strong><span>{stat.label}</span></div>
-          </div>
-        ))}
-      </section>
+      
+<section className="alv-stats" aria-label="Company highlights">
+  {stats.map((stat) => (
+    <AnimatedStat
+      key={stat.label}
+      number={stat.number}
+      label={stat.label}
+      icon={stat.icon}
+    />
+  ))}
+</section>
+
 
       <section className="alv-section" id="services">
         <div className="alv-section-heading">
@@ -109,32 +153,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="alv-section alv-project-section" id="portfolio">
-        <div className="alv-section-title-row">
-          <div className="alv-section-heading alv-heading-left">
-            <span className="alv-eyebrow">✦ OUR WORK</span>
-            <h2>Featured Projects</h2>
-            <p>A glimpse of digital product concepts and experiences.</p>
-          </div>
-          <Link href="/portfolio" className="alv-btn alv-btn-outline alv-view-all">View All Projects</Link>
-        </div>
-        <div className="alv-project-grid">
-          {projects.map((project) => (
-            <article className="alv-project-card" key={project.name}>
-              <Link href="/portfolio" className="alv-project-image">
-                <Image src={project.image} alt={project.name} width={380} height={195} />
-              </Link>
-              <div className="alv-project-copy">
-                <span className="alv-project-type">{project.type}</span>
-                <h3>{project.name}</h3>
-                <p>{project.description}</p>
-                <Link href="/portfolio" className="alv-text-link">View Project <span>→</span></Link>
-              </div>
-            </article>
-          ))}
-        </div>
-        {/* <p className="alv-disclaimer">Project cards are illustrative concepts. Replace them with real project examples before publishing.</p> */}
-      </section>
+      <FeaturedProjects projects={projects} />
 
       <section className="alv-cta-section">
         <div className="alv-cta">

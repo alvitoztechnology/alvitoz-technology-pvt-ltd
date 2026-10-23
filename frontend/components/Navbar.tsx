@@ -1,4 +1,7 @@
+
 "use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ThemeToggle from "./ThemeToggle";
@@ -16,50 +19,91 @@ const links = [
 
 export default function Navbar() {
   const pathname = usePathname();
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const isActive = (href: string) =>
+    href === "/"
+      ? pathname === "/"
+      : pathname === href || pathname.startsWith(`${href}/`);
+
+  const closeMenu = () => setMenuOpen(false);
+
   return (
-    <header className="navbar">
-      <Link href="/" className="brand" aria-label="Alvitoz Technology home">
-        {/* <span className="brand-mark">A</span> */}
+    <header className={`navbar ${menuOpen ? "navbar-menu-open" : ""}`}>
+      {/* Brand */}
+      <Link
+        href="/"
+        className="brand"
+        aria-label="Alvitoz Technology home"
+        onClick={closeMenu}
+      >
         <span>
           ALVITOZ
           <small>TECHNOLOGY</small>
         </span>
       </Link>
 
-      <nav className="nav-links" aria-label="Main navigation">
-      {links.map((link) => {
-      const isActive =
-        link.href === "/"
-          ? pathname === "/"
-          : pathname === link.href ||
-            pathname.startsWith(`${link.href}/`);
+      {/* Mobile menu toggle */}
+      <button
+        type="button"
+        className={`mobile-menu-toggle ${menuOpen ? "is-open" : ""}`}
+        aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+        aria-expanded={menuOpen}
+        aria-controls="primary-navigation"
+        onClick={() => setMenuOpen((open) => !open)}
+      >
+        <span />
+        <span />
+        <span />
+      </button>
 
-      return (
+      {/* Navigation */}
+      <nav
+        id="primary-navigation"
+        className={`nav-links ${menuOpen ? "menu-open" : ""}`}
+        aria-label="Main navigation"
+      >
+        {links.map((link, index) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className={isActive(link.href) ? "active" : ""}
+            aria-current={isActive(link.href) ? "page" : undefined}
+            style={{ "--item-index": index } as React.CSSProperties}
+            onClick={closeMenu}
+          >
+            {link.label}
+          </Link>
+        ))}
+
+        {/* Mobile-only contact link */}
         <Link
-          key={link.href}
-          href={link.href}
-          className={isActive ? "active" : ""}
-          aria-current={isActive ? "page" : undefined}
+          href="/contact"
+          className={`mobile-contact-link ${
+            pathname === "/contact" ? "active" : ""
+          }`}
+          aria-current={pathname === "/contact" ? "page" : undefined}
+          onClick={closeMenu}
         >
-          {link.label}
+          Let's Talk <span>↗</span>
         </Link>
-      );
-    })}
       </nav>
 
+      {/* Existing theme toggle and desktop CTA */}
       <div className="navbar-actions">
-    <ThemeToggle />
+        <ThemeToggle />
 
-    <Link
-      href="/contact"
-      className={`button button-primary nav-cta ${
-        pathname === "/contact" ? "active" : ""
-      }`}
-      aria-current={pathname === "/contact" ? "page" : undefined}
-    >
-      Let's Talk <span>↗</span>
-    </Link>
-  </div>
+        <Link
+          href="/contact"
+          className={`button button-primary nav-cta ${
+            pathname === "/contact" ? "active" : ""
+          }`}
+          aria-current={pathname === "/contact" ? "page" : undefined}
+          onClick={closeMenu}
+        >
+          Let's Talk <span>↗</span>
+        </Link>
+      </div>
     </header>
   );
 }
