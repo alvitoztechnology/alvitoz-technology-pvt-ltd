@@ -1,0 +1,105 @@
+
+/* =========================================
+   ALVITOZ TECHNOLOGY — FOOTER
+   ========================================= */
+
+   .footer {
+    padding: 48px 5% 22px;
+    background: #17141b;
+    color: #f8f4f7;
+    border-top: 1px solid #302832;
+  }
+  
+  /* Footer brand */
+  .footer .footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+  
+  .footer .brand-mark {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #ed1745, #ff4e78);
+    font-size: 24px;
+    font-weight: 900;
+  }
+  
+  .footer .footer-brand small {
+    display: block;
+    margin-top: 5px;
+    color: #c4b8c5;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+  }
+  
+  /* Footer description */
+  .footer > p {
+    max-width: 420px;
+    margin: 18px 0 25px;
+    color: #c2b8c5;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+  
+  /* Footer navigation */
+  .footer .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 22px 0;
+    border-top: 1px solid #38303a;
+    border-bottom: 1px solid #38303a;
+  }
+  
+  .footer .footer-links a {
+    color: #d7cdd8;
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .footer .footer-links a:hover {
+    color: #ff4e78;
+  }
+  
+  /* Copyright row */
+  .footer .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  
+    padding-top: 22px;
+    color: #a99eac;
+    font-size: 12px;
+  }
+  
+  /* Tablet and mobile */
+  @media (max-width: 650px) {
+    .footer {
+      padding: 36px 22px 20px;
+    }
+  
+    .footer .footer-links {
+      gap: 16px 22px;
+    }
+  
+    .footer .footer-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+  }
+  

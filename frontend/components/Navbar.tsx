@@ -1,6 +1,9 @@
-
+"use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import ThemeToggle from "./ThemeToggle";
+
+import "./Navbar.css";
 
 const links = [
   { label: "Home", href: "/" },
@@ -12,6 +15,7 @@ const links = [
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
   return (
     <header className="navbar">
       <Link href="/" className="brand" aria-label="Alvitoz Technology home">
@@ -23,11 +27,24 @@ export default function Navbar() {
       </Link>
 
       <nav className="nav-links" aria-label="Main navigation">
-        {links.map((link) => (
-          <Link key={link.href} href={link.href}>
-            {link.label}
-          </Link>
-        ))}
+      {links.map((link) => {
+      const isActive =
+        link.href === "/"
+          ? pathname === "/"
+          : pathname === link.href ||
+            pathname.startsWith(`${link.href}/`);
+
+      return (
+        <Link
+          key={link.href}
+          href={link.href}
+          className={isActive ? "active" : ""}
+          aria-current={isActive ? "page" : undefined}
+        >
+          {link.label}
+        </Link>
+      );
+    })}
       </nav>
 
       <div className="navbar-actions">
@@ -35,7 +52,10 @@ export default function Navbar() {
 
     <Link
       href="/contact"
-      className="button button-primary nav-cta"
+      className={`button button-primary nav-cta ${
+        pathname === "/contact" ? "active" : ""
+      }`}
+      aria-current={pathname === "/contact" ? "page" : undefined}
     >
       Let's Talk <span>↗</span>
     </Link>

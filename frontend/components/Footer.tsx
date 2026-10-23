@@ -1,5 +1,6 @@
 
 import Link from "next/link";
+import "./Footer.css";
 
 const footerLinks = [
   { label: "About", href: "/about" },

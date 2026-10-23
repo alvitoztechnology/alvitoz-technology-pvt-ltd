@@ -9,6 +9,8 @@ import {
   Settings,
 } from "lucide-react";
 
+import "./home.css";
+
 const services = [
   {
     icon: "monitor",
@@ -131,7 +133,7 @@ export default function Home() {
             </article>
           ))}
         </div>
-        <p className="alv-disclaimer">Project cards are illustrative concepts. Replace them with real project examples before publishing.</p>
+        {/* <p className="alv-disclaimer">Project cards are illustrative concepts. Replace them with real project examples before publishing.</p> */}
       </section>
 
       <section className="alv-cta-section">

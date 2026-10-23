@@ -1,6 +1,7 @@
 
 import type { Metadata } from "next";
 import Link from "next/link";
+import './services.css'
 
 export const metadata: Metadata = {
   title: "Our Services",

@@ -12,12 +12,12 @@ export const metadata: Metadata = {
 const projects = [
   {
     number: "01",
-    category: "WEB APPLICATION",
+    category: "SOFTWARE APPLICATION",
     title: "Business Management Platform",
     description:
       "A business workspace concept designed to organize information and simplify everyday operations.",
     tags: ["Next.js", "TypeScript", "Responsive UI"],
-    image: "/images/project-business-management.png",
+    image: "/images/foodvito.png",
     imageAlt: "Business management dashboard concept",
   },
   {
@@ -27,7 +27,7 @@ const projects = [
     description:
       "A mobile shopping experience concept focused on product discovery and a straightforward customer journey.",
     tags: ["Mobile UI", "User Experience", "Responsive Design"],
-    image: "/images/project-ecommerce-mobile.png",
+    image: "/images/ravito.png",
     imageAlt: "E-commerce mobile application concept",
   },
   {
@@ -37,7 +37,17 @@ const projects = [
     description:
       "An analytics interface concept that presents business metrics and data visualizations in one place.",
     tags: ["React", "Data Visualization", "UI Design"],
-    image: "/images/project-analytics.png",
+    image: "/images/vitomart.png",
+    imageAlt: "Business analytics dashboard concept",
+  },
+  {
+    number: "04",
+    category: "DASHBOARD DESIGN",
+    title: "Business Analytics Dashboard",
+    description:
+      "An analytics interface concept that presents business metrics and data visualizations in one place.",
+    tags: ["React", "Data Visualization", "UI Design"],
+    image: "/images/dravito.png",
     imageAlt: "Business analytics dashboard concept",
   },
 ];
