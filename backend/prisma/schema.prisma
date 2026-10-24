@@ -20,6 +20,14 @@ enum InquiryStatus {
   CLOSED
 }
 
+enum CareerApplicationStatus {
+  PENDING
+  REVIEWING
+  SHORTLISTED
+  REJECTED
+  HIRED
+}
+
 model ContactSubmission {
   id        String        @id @default(cuid())
   name      String        @db.VarChar(100)
@@ -27,10 +35,30 @@ model ContactSubmission {
   phone     String?       @db.VarChar(30)
   company   String?       @db.VarChar(150)
   service   String?       @db.VarChar(100)
+  budget    String?        @db.VarChar(50)
   message   String        @db.VarChar(5000)
   status    InquiryStatus @default(NEW)
   createdAt DateTime      @default(now())
   updatedAt DateTime      @updatedAt
+
+  @@index([createdAt])
+  @@index([status, createdAt])
+  @@index([email])
+}
+
+model CareerApplication {
+  id           String                   @id @default(cuid())
+  fullName     String                   @db.VarChar(100)
+  email        String                   @db.VarChar(254)
+  phone        String                   @db.VarChar(20)
+  position     String                   @db.VarChar(100)
+  experience   String                   @db.VarChar(50)
+  resumeUrl    String                   @db.VarChar(500)
+  resumeName   String                   @db.VarChar(255)
+  message      String?                  @db.VarChar(3000)
+  status       CareerApplicationStatus  @default(PENDING)
+  createdAt    DateTime                 @default(now())
+  updatedAt    DateTime                 @updatedAt
 
   @@index([createdAt])
   @@index([status, createdAt])

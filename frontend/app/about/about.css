@@ -542,3 +542,263 @@
     }
   }
   
+
+
+
+/* ==========================================
+   ABOUT PAGE — PREMIUM DARK THEME
+   Alvitoz Technology | Append at the bottom
+========================================== */
+
+/* Hero section */
+:root[data-theme="dark"] .about-page-hero {
+  background:
+    radial-gradient(
+      circle at 8% 10%,
+      rgba(237, 23, 69, 0.17),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 90% 85%,
+      rgba(255, 105, 150, 0.1),
+      transparent 32%
+    ),
+    #0b0b10;
+  color: #f8f7fb;
+}
+
+:root[data-theme="dark"] .page-hero-inner h1,
+:root[data-theme="dark"] .section-heading h2,
+:root[data-theme="dark"] .about-story h2 {
+  color: #f8f7fb;
+}
+
+:root[data-theme="dark"] .page-hero-inner p,
+:root[data-theme="dark"] .section-heading p,
+:root[data-theme="dark"] .story-copy p {
+  color: #b7b4c1;
+}
+
+:root[data-theme="dark"] .eyebrow {
+  color: #ff789d;
+}
+
+:root[data-theme="dark"] .gradient-text {
+  background: linear-gradient(
+    110deg,
+    #ff426f 5%,
+    #ff91b3 52%,
+    #ed1745 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Hero image */
+:root[data-theme="dark"] .about-hero-image {
+  border: 1px solid rgba(255, 120, 157, 0.2);
+  box-shadow:
+    0 28px 80px rgba(0, 0, 0, 0.45),
+    0 0 35px rgba(237, 23, 69, 0.08);
+}
+
+:root[data-theme="dark"] .about-hero-image::after {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 105, 150, 0.12),
+    transparent 50%,
+    rgba(237, 23, 69, 0.18)
+  );
+}
+
+/* Primary button */
+:root[data-theme="dark"] .button-primary {
+  color: #fff;
+  background: linear-gradient(110deg, #ed1745, #ff608e);
+  box-shadow: 0 8px 25px rgba(237, 23, 69, 0.22);
+}
+
+:root[data-theme="dark"] .button-primary:hover {
+  box-shadow: 0 12px 34px rgba(237, 23, 69, 0.36);
+}
+
+/* Our story */
+:root[data-theme="dark"] .about-story {
+  color: #f8f7fb;
+}
+
+:root[data-theme="dark"] .about-story .story-copy p {
+  color: #b7b4c1;
+}
+
+/* Mission and vision section */
+:root[data-theme="dark"] .about-mission {
+  background:
+    radial-gradient(
+      circle at 5% 35%,
+      rgba(237, 23, 69, 0.12),
+      transparent 38%
+    ),
+    #101016;
+}
+
+:root[data-theme="dark"] .mission-card {
+  background: linear-gradient(
+    145deg,
+    rgba(29, 26, 35, 0.98),
+    rgba(18, 17, 24, 0.98)
+  );
+  border-color: rgba(255, 255, 255, 0.09);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+:root[data-theme="dark"] .mission-card::before {
+  background: linear-gradient(
+    135deg,
+    rgba(237, 23, 69, 0.15),
+    rgba(255, 255, 255, 0.01)
+  );
+}
+
+:root[data-theme="dark"] .mission-card:hover {
+  border-color: rgba(255, 105, 150, 0.42);
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.3),
+    0 0 25px rgba(237, 23, 69, 0.07);
+}
+
+:root[data-theme="dark"] .mission-primary {
+  background: linear-gradient(
+    135deg,
+    rgba(82, 20, 42, 0.78),
+    rgba(29, 26, 35, 0.98)
+  );
+  border-color: rgba(237, 23, 69, 0.35);
+}
+
+:root[data-theme="dark"] .mission-icon {
+  color: #ff7298;
+  background: linear-gradient(
+    135deg,
+    rgba(237, 23, 69, 0.22),
+    rgba(255, 120, 157, 0.1)
+  );
+  border: 1px solid rgba(255, 120, 157, 0.15);
+}
+
+:root[data-theme="dark"] .mission-card h2 {
+  color: #f8f7fb;
+}
+
+:root[data-theme="dark"] .mission-card p {
+  color: #b7b4c1;
+}
+
+/* Company values */
+:root[data-theme="dark"] .values-grid {
+  color: #f8f7fb;
+}
+
+:root[data-theme="dark"] .value-card {
+  background: linear-gradient(
+    145deg,
+    #191820,
+    #111116
+  );
+  border-color: rgba(255, 255, 255, 0.09);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+:root[data-theme="dark"] .value-card:hover {
+  border-color: rgba(255, 105, 150, 0.4);
+  box-shadow:
+    0 18px 38px rgba(0, 0, 0, 0.28),
+    0 0 25px rgba(237, 23, 69, 0.06);
+}
+
+:root[data-theme="dark"] .value-card h3 {
+  color: #f8f7fb;
+}
+
+:root[data-theme="dark"] .value-card p {
+  color: #b7b4c1;
+}
+
+:root[data-theme="dark"] .value-number {
+  color: #ff789d;
+  background: rgba(237, 23, 69, 0.15);
+  border: 1px solid rgba(255, 120, 157, 0.13);
+}
+
+:root[data-theme="dark"] .value-card:hover .value-number {
+  color: #fff;
+  background: linear-gradient(135deg, #ed1745, #ff78a0);
+}
+
+/* Final CTA — preserve the pink brand gradient */
+:root[data-theme="dark"] .final-cta {
+  background: linear-gradient(
+    120deg,
+    #8f0b31 0%,
+    #d81343 48%,
+    #fa5687 100%
+  );
+  box-shadow:
+    0 25px 65px rgba(0, 0, 0, 0.28),
+    0 10px 35px rgba(237, 23, 69, 0.12);
+}
+
+:root[data-theme="dark"] .final-cta .eyebrow {
+  color: #ffe0ea;
+}
+
+:root[data-theme="dark"] .final-cta h2 {
+  color: #fff;
+}
+
+:root[data-theme="dark"] .final-cta h2 span {
+  color: #ffe0ea;
+}
+
+:root[data-theme="dark"] .final-cta p {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+:root[data-theme="dark"] .button-light {
+  color: #c8103c;
+  background: #fff;
+}
+
+:root[data-theme="dark"] .button-light:hover {
+  color: #a80b32;
+  background: #fff0f5;
+}
+
+/* Smooth theme transitions */
+:root[data-theme="dark"] .about-page-hero,
+:root[data-theme="dark"] .about-story,
+:root[data-theme="dark"] .about-mission,
+:root[data-theme="dark"] .mission-card,
+:root[data-theme="dark"] .value-card,
+:root[data-theme="dark"] .about-hero-image,
+:root[data-theme="dark"] .button {
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Accessibility: respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  :root[data-theme="dark"] .about-page-hero *,
+  :root[data-theme="dark"] .about-hero-image img,
+  :root[data-theme="dark"] .mission-card,
+  :root[data-theme="dark"] .value-card,
+  :root[data-theme="dark"] .button {
+    animation: none !important;
+    transition: none !important;
+  }
+}

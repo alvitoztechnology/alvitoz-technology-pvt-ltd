@@ -1400,3 +1400,487 @@
     }
   }
   
+
+
+/* ==========================================
+   PREMIUM PORTFOLIO COMING SOON EFFECT
+========================================== */
+
+.portfolio-image-grid .portfolio-image-wrap {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+/* Image zoom on hover */
+.portfolio-image-grid .portfolio-project-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+
+  transition:
+    transform 0.65s cubic-bezier(0.2, 0.75, 0.25, 1),
+    filter 0.45s ease;
+}
+
+/* Gradient glass overlay */
+.portfolio-image-grid .portfolio-coming-soon {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  padding: 20px;
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      rgba(255, 255, 255, 0.18),
+      transparent 50%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(190, 0, 53, 0.88),
+      rgba(237, 23, 69, 0.79),
+      rgba(255, 92, 145, 0.88)
+    );
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease;
+}
+
+/* Soft decorative ring */
+.portfolio-image-grid .portfolio-coming-soon::before {
+  content: "";
+  position: absolute;
+
+  width: 170px;
+  height: 170px;
+
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 18px rgba(255, 255, 255, 0.045),
+    0 0 0 38px rgba(255, 255, 255, 0.035);
+
+  transform: scale(0.75);
+  transition: transform 0.65s ease;
+}
+
+/* Badge */
+.portfolio-image-grid .portfolio-coming-soon-badge {
+  position: relative;
+  z-index: 1;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  padding: 13px 21px;
+
+  color: #ed1745;
+  background: rgba(255, 255, 255, 0.96);
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 999px;
+
+  box-shadow:
+    0 8px 30px rgba(80, 0, 25, 0.18),
+    inset 0 1px 0 #ffffff;
+
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 2px;
+
+  transform: translateY(15px) scale(0.92);
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Animated status dot */
+.portfolio-image-grid .portfolio-coming-soon-dot {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+
+  border-radius: 50%;
+  background: #ed1745;
+
+  box-shadow: 0 0 0 4px rgba(237, 23, 69, 0.12);
+
+  animation: portfolio-coming-pulse 1.8s ease-in-out infinite;
+}
+
+/* Supporting text */
+.portfolio-image-grid .portfolio-coming-soon p {
+  position: relative;
+  z-index: 1;
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+
+  opacity: 0;
+  transform: translateY(8px);
+
+  transition:
+    opacity 0.4s ease 0.08s,
+    transform 0.4s ease 0.08s;
+}
+
+/* Hover activation */
+.portfolio-image-grid .portfolio-image-card:hover .portfolio-coming-soon,
+.portfolio-image-grid .portfolio-image-card:focus-within .portfolio-coming-soon {
+  opacity: 1;
+  visibility: visible;
+}
+
+.portfolio-image-grid .portfolio-image-card:hover .portfolio-project-image,
+.portfolio-image-grid .portfolio-image-card:focus-within .portfolio-project-image {
+  transform: scale(1.08);
+  filter: saturate(0.8) brightness(0.85);
+}
+
+.portfolio-image-grid .portfolio-image-card:hover .portfolio-coming-soon::before,
+.portfolio-image-grid .portfolio-image-card:focus-within .portfolio-coming-soon::before {
+  transform: scale(1);
+}
+
+.portfolio-image-grid .portfolio-image-card:hover .portfolio-coming-soon-badge,
+.portfolio-image-grid .portfolio-image-card:focus-within .portfolio-coming-soon-badge {
+  transform: translateY(0) scale(1);
+}
+
+.portfolio-image-grid .portfolio-image-card:hover .portfolio-coming-soon p,
+.portfolio-image-grid .portfolio-image-card:focus-within .portfolio-coming-soon p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Keep project number above the overlay */
+.portfolio-image-grid .portfolio-image-number {
+  z-index: 4;
+}
+
+/* Pulse */
+@keyframes portfolio-coming-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 3px rgba(237, 23, 69, 0.1);
+  }
+
+  50% {
+    box-shadow: 0 0 0 6px rgba(237, 23, 69, 0.17);
+  }
+}
+
+/* Touchscreen: show the status without requiring hover */
+@media (hover: none) {
+  .portfolio-image-grid .portfolio-coming-soon {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .portfolio-image-grid .portfolio-coming-soon-badge {
+    transform: none;
+  }
+
+  .portfolio-image-grid .portfolio-coming-soon p {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-image-grid .portfolio-project-image,
+  .portfolio-image-grid .portfolio-coming-soon,
+  .portfolio-image-grid .portfolio-coming-soon::before,
+  .portfolio-image-grid .portfolio-coming-soon-badge,
+  .portfolio-image-grid .portfolio-coming-soon p {
+    transition: none;
+  }
+
+  .portfolio-image-grid .portfolio-coming-soon-dot {
+    animation: none;
+  }
+}
+
+
+
+/* ==========================================
+   PORTFOLIO — PREMIUM DARK MODE
+========================================== */
+
+/* Hero */
+:root[data-theme="dark"] .portfolio-hero {
+  background:
+    radial-gradient(
+      circle at 78% 45%,
+      rgba(237, 23, 69, 0.15),
+      transparent 36%
+    ),
+    radial-gradient(
+      circle at 5% 15%,
+      rgba(255, 105, 150, 0.09),
+      transparent 38%
+    ),
+    linear-gradient(110deg, #0d0b12, #101016 58%, #0c0b11);
+}
+
+:root[data-theme="dark"] .portfolio-hero .page-hero-inner h1 {
+  color: #f8f7fb;
+}
+
+:root[data-theme="dark"] .portfolio-hero .page-hero-inner > p {
+  color: #b9b4c1;
+}
+
+:root[data-theme="dark"] .portfolio-hero .eyebrow {
+  color: #ff86a7;
+  background: rgba(237, 23, 69, 0.14);
+  border: 1px solid rgba(255, 120, 157, 0.15);
+}
+
+:root[data-theme="dark"] .portfolio-hero .gradient-text,
+:root[data-theme="dark"] .portfolio-section .section-heading h2 .gradient-text {
+  background: linear-gradient(
+    100deg,
+    #ff426f,
+    #ff91b3 60%,
+    #ed1745
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+:root[data-theme="dark"] .portfolio-hero .button-primary {
+  color: #fff;
+  background: linear-gradient(105deg, #ed1745, #ff608e);
+  box-shadow: 0 8px 25px rgba(237, 23, 69, 0.25);
+}
+
+:root[data-theme="dark"] .portfolio-hero .button-primary:hover {
+  box-shadow: 0 12px 32px rgba(237, 23, 69, 0.4);
+}
+
+:root[data-theme="dark"] .portfolio-hero .about-hero-decoration {
+  color: rgba(255, 105, 150, 0.045);
+}
+
+/* Hero circular image */
+:root[data-theme="dark"] .portfolio-image-orbit {
+  border-color: rgba(255, 120, 157, 0.25);
+  background: radial-gradient(
+    circle,
+    rgba(237, 23, 69, 0.18),
+    rgba(255, 105, 150, 0.07) 65%,
+    transparent 72%
+  );
+  box-shadow:
+    inset 0 0 0 12px rgba(255, 153, 185, 0.04),
+    inset 0 0 0 25px rgba(255, 153, 185, 0.03);
+}
+
+:root[data-theme="dark"] .portfolio-hero-image {
+  background: #201722;
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.4),
+    0 0 35px rgba(237, 23, 69, 0.1);
+}
+
+:root[data-theme="dark"] .portfolio-pink-dot {
+  background: rgba(255, 105, 150, 0.8);
+  box-shadow: 0 5px 22px rgba(237, 23, 69, 0.22);
+}
+
+/* Selected projects section */
+:root[data-theme="dark"] .portfolio-section {
+  background: #0b0b10;
+}
+
+:root[data-theme="dark"] .portfolio-section .section-heading h2 {
+  color: #f8f7fb;
+}
+
+:root[data-theme="dark"] .portfolio-section .section-heading > p {
+  color: #b7b4c1;
+}
+
+:root[data-theme="dark"] .portfolio-section .section-heading .eyebrow {
+  color: #ff789d;
+}
+
+/* Project cards */
+:root[data-theme="dark"] .portfolio-section .portfolio-image-card {
+  background: linear-gradient(145deg, #1b1922, #111116);
+  border-color: rgba(255, 255, 255, 0.09);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.22);
+}
+
+:root[data-theme="dark"] .portfolio-section .portfolio-image-card:hover {
+  border-color: rgba(255, 120, 157, 0.4);
+  box-shadow:
+    0 22px 48px rgba(0, 0, 0, 0.35),
+    0 0 25px rgba(237, 23, 69, 0.06);
+}
+
+/* Project image background */
+:root[data-theme="dark"] .portfolio-section .portfolio-image-wrap {
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(237, 23, 69, 0.17),
+      transparent 45%
+    ),
+    linear-gradient(135deg, #211923, #14121a);
+}
+
+:root[data-theme="dark"] .portfolio-section .portfolio-image-wrap::after {
+  border-color: rgba(255, 120, 157, 0.08);
+}
+
+:root[data-theme="dark"] .portfolio-section .portfolio-image-number {
+  color: #ff789d;
+  background: rgba(27, 22, 31, 0.94);
+  border-color: rgba(255, 120, 157, 0.22);
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Project details */
+:root[data-theme="dark"] .portfolio-section .portfolio-category {
+  color: #ff789d;
+}
+
+:root[data-theme="dark"] .portfolio-section .project-content h3 {
+  color: #f8f7fb;
+}
+
+:root[data-theme="dark"] .portfolio-section .project-content > p {
+  color: #b7b4c1;
+}
+
+/* Technology badges */
+:root[data-theme="dark"] .portfolio-section .project-content .service-tag {
+  color: #ffc0d1;
+  background: rgba(237, 23, 69, 0.1);
+  border-color: rgba(255, 120, 157, 0.18);
+}
+
+/* Project links */
+:root[data-theme="dark"] .portfolio-section .portfolio-project-link {
+  color: #ff789d;
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+:root[data-theme="dark"] .portfolio-section .portfolio-project-link:hover {
+  color: #ffb0c6;
+}
+
+/* Portfolio note / disclaimer */
+:root[data-theme="dark"] .portfolio-section .portfolio-note {
+  color: #b7b4c1;
+  background: #15121a;
+  border-color: rgba(255, 120, 157, 0.16);
+}
+
+/* CTA section wrapper */
+:root[data-theme="dark"] .portfolio-section + .section:has(.portfolio-cta) {
+  background: #0b0b10;
+}
+
+/* CTA keeps the signature pink gradient */
+:root[data-theme="dark"] .portfolio-cta {
+  color: #fff;
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(255, 255, 255, 0.14),
+      transparent 35%
+    ),
+    linear-gradient(115deg, #970b32 0%, #d81343 55%, #fa5687 100%);
+  border-color: rgba(255, 120, 157, 0.2);
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.3),
+    0 10px 35px rgba(237, 23, 69, 0.1);
+}
+
+:root[data-theme="dark"] .portfolio-cta .eyebrow {
+  color: #ffe0ea;
+}
+
+:root[data-theme="dark"] .portfolio-cta h2 {
+  color: #fff;
+}
+
+:root[data-theme="dark"] .portfolio-cta h2 span {
+  color: #ffe0ea;
+}
+
+:root[data-theme="dark"] .portfolio-cta > p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+:root[data-theme="dark"] .portfolio-cta .button-light {
+  color: #c8103c;
+  background: #fff;
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+:root[data-theme="dark"] .portfolio-cta .button-light:hover {
+  color: #a80b32;
+  background: #fff0f5;
+}
+
+/* Theme transitions */
+:root[data-theme="dark"] .portfolio-hero,
+:root[data-theme="dark"] .portfolio-section,
+:root[data-theme="dark"] .portfolio-image-card,
+:root[data-theme="dark"] .portfolio-image-wrap,
+:root[data-theme="dark"] .portfolio-note,
+:root[data-theme="dark"] .portfolio-cta {
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-hero-image img,
+  .portfolio-image-card,
+  .portfolio-project-image,
+  .portfolio-project-link,
+  .portfolio-project-link span,
+  .portfolio-hero .button-primary,
+  .portfolio-cta .button-light {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .portfolio-image-card:hover,
+  .portfolio-hero .button-primary:hover,
+  .portfolio-cta .button-light:hover {
+    transform: none;
+  }
+}

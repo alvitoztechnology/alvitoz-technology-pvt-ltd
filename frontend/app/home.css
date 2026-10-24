@@ -2004,3 +2004,176 @@
     transition: none !important;
   }
 }
+
+
+
+
+/* ==========================================
+   ALVITOZ HOME PAGE — COMPLETE DARK THEME
+   Append at the END of the home CSS file
+========================================== */
+
+:root[data-theme="dark"] .alv-hero {
+  background:
+    radial-gradient(
+      ellipse at 82% 48%,
+      rgba(255, 94, 139, 0.15),
+      transparent 42%
+    ),
+    radial-gradient(
+      ellipse at 8% 10%,
+      rgba(255, 92, 145, 0.08),
+      transparent 38%
+    ),
+    linear-gradient(115deg, #100d12 5%, #171119 58%, #24131e 100%);
+}
+
+:root[data-theme="dark"] .alv-hero h1,
+:root[data-theme="dark"] .alv-section-heading h2,
+:root[data-theme="dark"] .alv-project-copy h3,
+:root[data-theme="dark"] .alv-service-card h3,
+:root[data-theme="dark"] .alv-stat strong {
+  color: #fff1f6;
+}
+
+:root[data-theme="dark"] .alv-hero-copy > p,
+:root[data-theme="dark"] .alv-section-heading p,
+:root[data-theme="dark"] .alv-service-card p,
+:root[data-theme="dark"] .alv-project-copy p,
+:root[data-theme="dark"] .alv-disclaimer,
+:root[data-theme="dark"] .alv-stat > div > span,
+:root[data-theme="dark"] .alv-swipe-hint {
+  color: #c1adba;
+}
+
+/* Eyebrow and secondary button */
+:root[data-theme="dark"] .alv-eyebrow {
+  color: #ff789f;
+  background: rgba(255, 72, 125, 0.12);
+  border-color: rgba(255, 110, 153, 0.2);
+}
+
+:root[data-theme="dark"] .alv-btn-outline {
+  color: #ffeaf1;
+  background: #211923;
+  border-color: rgba(255, 110, 153, 0.35);
+}
+
+:root[data-theme="dark"] .alv-btn-outline:hover {
+  background: #34202c;
+}
+
+/* Statistics section */
+:root[data-theme="dark"] .alv-stats {
+  background: linear-gradient(135deg, #171119, #21131e);
+  border-color: rgba(255, 110, 153, 0.15);
+}
+
+:root[data-theme="dark"] .alv-stat {
+  background: rgba(35, 25, 35, 0.92);
+  border-color: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+:root[data-theme="dark"] .alv-stat:hover {
+  border-color: rgba(255, 92, 145, 0.38);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+:root[data-theme="dark"] .alv-stat-icon {
+  color: #ff6e9a;
+  background: linear-gradient(145deg, #432032, #321a29);
+  box-shadow: none;
+}
+
+/* Services section and cards */
+:root[data-theme="dark"] .alv-service-card {
+  color: #fff1f6;
+  background: #1b151e;
+  border-color: rgba(255, 110, 153, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+:root[data-theme="dark"] .alv-service-card:hover {
+  border-color: rgba(255, 92, 145, 0.4);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.3);
+}
+
+:root[data-theme="dark"] .alv-service-icon {
+  color: #ff6e9a;
+  background: linear-gradient(145deg, #422032, #321a29);
+}
+
+:root[data-theme="dark"] .alv-service-card:hover .alv-service-icon {
+  color: #fff;
+  background: linear-gradient(135deg, #ed1745, #ff5c91);
+}
+
+/* Featured projects section */
+:root[data-theme="dark"] .alv-project-section {
+  background: #131016;
+}
+
+:root[data-theme="dark"] .alv-project-card {
+  background: #1c1620;
+  border-color: rgba(255, 110, 153, 0.15);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+}
+
+:root[data-theme="dark"] .alv-project-card:hover {
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.35);
+}
+
+:root[data-theme="dark"] .alv-project-image {
+  background: #271923;
+}
+
+:root[data-theme="dark"] .alv-project-type,
+:root[data-theme="dark"] .alv-text-link,
+:root[data-theme="dark"] .alv-carousel-count {
+  color: #ff719c;
+}
+
+/* Carousel navigation */
+:root[data-theme="dark"] .alv-carousel-arrow {
+  color: #ff719c;
+  background: #261923;
+  border-color: rgba(255, 110, 153, 0.25);
+}
+
+:root[data-theme="dark"] .alv-carousel-arrow:hover {
+  color: #fff;
+  background: linear-gradient(135deg, #c90e39, #ed1745);
+}
+
+/* Keep pink orbit animations, but soften them */
+:root[data-theme="dark"] .alv-hero-art::before {
+  background: radial-gradient(
+    circle,
+    rgba(255, 93, 139, 0.17) 0%,
+    rgba(255, 92, 145, 0.07) 42%,
+    transparent 72%
+  );
+}
+
+:root[data-theme="dark"] .alv-orbit {
+  border-color: rgba(255, 105, 153, 0.25);
+}
+
+/* CTA keeps its pink brand gradient */
+:root[data-theme="dark"] .alv-cta {
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.28);
+}
+
+/* Smooth theme transitions */
+:root[data-theme="dark"] .alv-stat,
+:root[data-theme="dark"] .alv-service-card,
+:root[data-theme="dark"] .alv-project-card,
+:root[data-theme="dark"] .alv-carousel-arrow {
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}

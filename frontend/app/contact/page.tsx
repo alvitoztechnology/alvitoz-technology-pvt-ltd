@@ -1,5 +1,7 @@
 
 import type { Metadata } from "next";
+import "./Contact.css";
+import ContactForm from "./ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -9,22 +11,77 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <>
-      <section className="page-hero">
-        <div className="page-hero-inner">
-          <span className="eyebrow">LET'S CONNECT</span>
-          <h1>
-            Tell us what
-            <br />
-            <span className="gradient-text">you want to build.</span>
-          </h1>
-          <p>
-            Have a project in mind or a business challenge to solve? Tell us a
-            little about it and let&apos;s start a conversation.
-          </p>
-        </div>
-        <div className="about-hero-decoration">C</div>
-      </section>
+    <main className="contact-page">
+      
+<section className="page-hero contact-hero">
+  <div className="page-hero-inner">
+    <span className="eyebrow">LET&apos;S CONNECT</span>
+
+    <h1>
+      Tell us what
+      <br />
+      <span className="gradient-text">you want to build.</span>
+    </h1>
+
+    <p>
+      Have a project in mind or a business challenge to solve? Tell us a
+      little about it and let&apos;s start a conversation.
+    </p>
+
+    <a href="#contact-form" className="button button-primary">
+      Start a Conversation <span>→</span>
+    </a>
+  </div>
+
+  <div className="contact-hero-visual" aria-hidden="true">
+    <div className="contact-hero-orbit contact-hero-orbit-one" />
+    <div className="contact-hero-orbit contact-hero-orbit-two" />
+
+    <div className="contact-hero-main-card">
+      <div className="contact-hero-main-icon">✦</div>
+      <h3>
+        Let&apos;s
+        <br />
+        Work Together
+      </h3>
+      <div className="contact-hero-lines">
+        <span />
+        <span />
+        <span />
+      </div>
+      <div className="contact-hero-arrow">↗</div>
+    </div>
+
+    <div className="contact-floating-card contact-card-idea">
+      <div className="contact-floating-icon">✉</div>
+      <div>
+        <strong>Share Your Idea</strong>
+        <span>Tell us about your project</span>
+      </div>
+    </div>
+
+    <div className="contact-floating-card contact-card-team">
+      <div className="contact-floating-icon">♧</div>
+      <div>
+        <strong>Join Our Team</strong>
+        <span>Explore career opportunities</span>
+      </div>
+    </div>
+
+    <div className="contact-floating-card contact-card-help">
+      <div className="contact-floating-icon">☏</div>
+      <div>
+        <strong>General Inquiries</strong>
+        <span>We&apos;re here to help</span>
+      </div>
+    </div>
+
+    <span className="contact-hero-spark contact-spark-a">✦</span>
+    <span className="contact-hero-spark contact-spark-b">✧</span>
+    <span className="contact-hero-spark contact-spark-c">✳</span>
+  </div>
+</section>
+
 
       <section className="section">
         <div className="contact-layout">
@@ -71,93 +128,10 @@ export default function ContactPage() {
               Fields marked with * are required.
             </p>
 
-            <form className="contact-form" action="/api/contact" method="POST">
-              <div className="contact-field">
-                <label htmlFor="name">Full name *</label>
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  placeholder="Your full name"
-                  required
-                  minLength={2}
-                  maxLength={100}
-                />
-              </div>
-
-              <div className="contact-field">
-                <label htmlFor="email">Email address *</label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="you@company.com"
-                  required
-                  maxLength={254}
-                />
-              </div>
-
-              <div className="contact-field">
-                <label htmlFor="service">Service you need *</label>
-                <select id="service" name="service" required defaultValue="">
-                  <option value="" disabled>
-                    Select a service
-                  </option>
-                  <option value="Web Development">Web Development</option>
-                  <option value="Backend Development">
-                    Backend Development
-                  </option>
-                  <option value="UI/UX Design">UI/UX Design</option>
-                  <option value="Custom Software">Custom Software</option>
-                  <option value="Cloud & Deployment">
-                    Cloud &amp; Deployment
-                  </option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-
-              <div className="contact-field">
-                <label htmlFor="budget">Estimated budget</label>
-                <select id="budget" name="budget" defaultValue="">
-                  <option value="">Select a budget (optional)</option>
-                  <option value="Under ₹25,000">Under ₹25,000</option>
-                  <option value="₹25,000–₹75,000">₹25,000–₹75,000</option>
-                  <option value="₹75,000–₹2,00,000">
-                    ₹75,000–₹2,00,000
-                  </option>
-                  <option value="₹2,00,000+">₹2,00,000+</option>
-                  <option value="Not sure yet">Not sure yet</option>
-                </select>
-              </div>
-
-              <div className="contact-field">
-                <label htmlFor="message">Project details *</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  placeholder="Tell us about your idea, requirements, or challenge..."
-                  rows={5}
-                  required
-                  minLength={10}
-                  maxLength={5000}
-                />
-              </div>
-
-              <button
-                className="button button-primary contact-submit"
-                type="submit"
-              >
-                Send Enquiry →
-              </button>
-
-              <p className="contact-form-disclaimer">
-                By submitting this form, you agree that we may use these
-                details to respond to your enquiry.
-              </p>
-            </form>
+            <ContactForm />
           </div>
         </div>
       </section>
-    </>
+    </main>
   );
 }

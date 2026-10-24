@@ -555,3 +555,159 @@
     display: none;
   }
 }
+
+
+
+/* ==========================================
+   ALVITOZ NAVBAR — PREMIUM DARK THEME
+   Uses the existing data-theme toggle
+========================================== */
+
+:root[data-theme="dark"] .navbar {
+  background: linear-gradient(
+    105deg,
+    rgba(17, 13, 19, 0.97) 0%,
+    rgba(27, 17, 25, 0.97) 55%,
+    rgba(38, 19, 30, 0.96) 100%
+  );
+
+  border-bottom: 1px solid rgba(255, 105, 153, 0.17);
+
+  box-shadow:
+    0 5px 24px rgba(0, 0, 0, 0.25),
+    0 1px 0 rgba(255, 255, 255, 0.025) inset;
+
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+}
+
+:root[data-theme="dark"] .navbar::after {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(237, 23, 69, 0.45),
+    rgba(255, 120, 160, 0.6),
+    transparent
+  );
+}
+
+/* Brand */
+:root[data-theme="dark"] .navbar .brand {
+  color: #fff0f6;
+}
+
+:root[data-theme="dark"] .navbar .brand small {
+  color: #b9a3b0;
+}
+
+/* Desktop navigation */
+:root[data-theme="dark"] .navbar .nav-links {
+  color: #d0bdc9;
+}
+
+:root[data-theme="dark"] .navbar .nav-links a:hover,
+:root[data-theme="dark"] .navbar .nav-links a.active {
+  color: #ff719c;
+}
+
+:root[data-theme="dark"] .navbar .nav-links a::after {
+  background: linear-gradient(90deg, #ed1745, #ff85ac);
+}
+
+/* Theme toggle */
+:root[data-theme="dark"] .navbar .theme-toggle {
+  color: #ffb0cb;
+  background: #241a25;
+  border-color: rgba(255, 110, 153, 0.23);
+
+  box-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+}
+
+:root[data-theme="dark"] .navbar .theme-toggle:hover {
+  color: #ffffff;
+  background: #38202e;
+  border-color: rgba(255, 110, 153, 0.48);
+
+  box-shadow: 0 5px 18px rgba(237, 23, 69, 0.16);
+}
+
+/* Contact CTA — keep pink branding */
+:root[data-theme="dark"] .navbar .nav-cta {
+  background: linear-gradient(110deg, #ed1745, #ff527f);
+  color: #ffffff;
+
+  box-shadow:
+    0 6px 20px rgba(237, 23, 69, 0.24),
+    0 1px 0 rgba(255, 255, 255, 0.13) inset;
+}
+
+:root[data-theme="dark"] .navbar .nav-cta::before {
+  background: linear-gradient(110deg, #c90e39, #ff789d);
+}
+
+/* ==========================================
+   MOBILE HAMBURGER
+========================================== */
+
+@media (max-width: 650px) {
+  :root[data-theme="dark"] .navbar .mobile-menu-toggle {
+    background: linear-gradient(145deg, #241a25, #30202d);
+    border-color: rgba(255, 110, 153, 0.24);
+
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+  }
+
+  :root[data-theme="dark"] .navbar .mobile-menu-toggle span {
+    background: #ff719c;
+  }
+
+  :root[data-theme="dark"] .navbar .mobile-menu-toggle:hover {
+    background: #38202e;
+  }
+
+  /* Mobile dropdown */
+  :root[data-theme="dark"] .navbar .nav-links {
+    background: rgba(24, 17, 25, 0.98);
+    border-color: rgba(255, 110, 153, 0.19);
+
+    box-shadow:
+      0 18px 50px rgba(0, 0, 0, 0.42),
+      0 1px 0 rgba(255, 255, 255, 0.035) inset;
+
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+  }
+
+  :root[data-theme="dark"] .navbar .nav-links a {
+    color: #d8c5d1;
+  }
+
+  :root[data-theme="dark"] .navbar .nav-links a:hover,
+  :root[data-theme="dark"] .navbar .nav-links a.active {
+    color: #ff85ac;
+
+    background: linear-gradient(
+      100deg,
+      rgba(237, 23, 69, 0.17),
+      rgba(255, 120, 160, 0.07)
+    );
+  }
+
+  :root[data-theme="dark"] .navbar .nav-links a.active {
+    box-shadow: inset 3px 0 #ed1745;
+  }
+
+  /* Contact link inside dropdown */
+  :root[data-theme="dark"] .navbar .nav-links .mobile-contact-link {
+    color: #ff85ac;
+
+    background: rgba(237, 23, 69, 0.12);
+    border-color: rgba(255, 110, 153, 0.2);
+  }
+
+  :root[data-theme="dark"] .navbar .nav-links .mobile-contact-link:hover {
+    background: rgba(237, 23, 69, 0.2);
+  }
+}

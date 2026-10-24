@@ -1,6 +1,8 @@
 
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
+import "./Blog.css";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -79,25 +81,46 @@ const articles = [
 
 export default function BlogPage() {
   return (
-    <>
-      <section className="page-hero">
-        <div className="page-hero-inner">
-          <span className="eyebrow">THE ALVITOZ JOURNAL</span>
-          <h1>
-            Ideas worth sharing.
-            <br />
-            <span className="gradient-text">Knowledge worth building.</span>
-          </h1>
-          <p>
-            Practical insights on software engineering, digital experiences,
-            and technology that helps businesses move forward.
-          </p>
-          <a href="#articles" className="button button-primary">
-            Explore Articles ↓
-          </a>
-        </div>
-        <div className="about-hero-decoration">B</div>
-      </section>
+    <main className="blog-page">
+      <section className="page-hero blog-hero">
+    <div className="page-hero-inner">
+      <span className="eyebrow">THE ALVITOZ JOURNAL</span>
+
+      <h1>
+        Ideas worth sharing.
+        <br />
+        <span className="gradient-text">Knowledge worth building.</span>
+      </h1>
+
+      <p>
+        Practical insights on software engineering, digital experiences,
+        and technology that helps businesses move forward.
+      </p>
+
+      <a href="#articles" className="button button-primary">
+        Explore Articles <span>↗</span>
+      </a>
+    </div>
+
+    <div className="blog-hero-visual" aria-hidden="true">
+      <Image
+        src="/images/blog.png"
+        alt=""
+        fill
+        priority
+        sizes="(max-width: 650px) 100vw, 50vw"
+        className="blog-hero-image"
+      />
+
+      <span className="blog-hero-orb blog-hero-orb-one" />
+      <span className="blog-hero-orb blog-hero-orb-two" />
+    </div>
+
+    <div className="about-hero-decoration" aria-hidden="true">
+      B
+    </div>
+  </section>
+
 
       <section className="section" id="articles">
         <div className="section-heading">
@@ -142,11 +165,6 @@ export default function BlogPage() {
           ))}
         </div>
 
-        <p className="portfolio-note">
-          These are sample article listings. We&apos;ll create individual
-          article pages next and can connect blog content to the database
-          later.
-        </p>
       </section>
 
       <section className="section">
@@ -166,6 +184,6 @@ export default function BlogPage() {
           </Link>
         </div>
       </section>
-    </>
+    </main>
   );
 }

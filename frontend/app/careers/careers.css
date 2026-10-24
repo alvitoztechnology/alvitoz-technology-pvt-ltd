@@ -153,7 +153,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    min-height: 490px;
+    min-height: 690px;
     padding: 85px 8%;
     overflow: hidden;
     isolation: isolate;
@@ -725,3 +725,325 @@
     }
   }
   
+
+
+/* ==========================================
+   FINAL CTA — LEFT ALIGNED
+========================================== */
+
+.careers-page .final-cta {
+  text-align: left;
+  padding: 75px 8%;
+}
+
+.careers-page .final-cta .eyebrow {
+  justify-content: flex-start;
+}
+
+.careers-page .final-cta h2 {
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.careers-page .final-cta > p {
+  max-width: 560px;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+}
+
+.careers-page .final-cta .button {
+  margin-left: 0;
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+  .careers-page .final-cta {
+    padding: 45px 25px;
+    text-align: left;
+  }
+
+  .careers-page .final-cta h2 {
+    font-size: 34px;
+  }
+
+  .careers-page .final-cta > p {
+    text-align: left;
+  }
+}
+
+
+/* ==========================================
+   ALVITOZ TECHNOLOGY — CAREERS DARK MODE
+   Append at the VERY BOTTOM of careers.css
+========================================== */
+
+:root[data-theme="dark"] .careers-page {
+  --career-blush: #21141c;
+  --career-dark: #fff0f5;
+  --career-text: #f5e8ee;
+  --career-muted: #c0aab6;
+  --career-border: rgba(255, 92, 145, 0.2);
+  --career-shadow: 0 20px 55px rgba(0, 0, 0, 0.25);
+
+  color: var(--career-text);
+  background: #100b10;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Global section headings */
+
+:root[data-theme="dark"] .careers-page .section-heading h2,
+:root[data-theme="dark"] .careers-page .career-benefit-card h3,
+:root[data-theme="dark"] .careers-page .career-job-main h3,
+:root[data-theme="dark"] .careers-page .career-note > strong {
+  color: #fff0f5;
+}
+
+:root[data-theme="dark"] .careers-page .section-heading > p,
+:root[data-theme="dark"] .careers-page .page-hero-inner > p,
+:root[data-theme="dark"] .careers-page .career-benefit-card p,
+:root[data-theme="dark"] .careers-page .career-job-main > p,
+:root[data-theme="dark"] .careers-page .career-job-meta > span,
+:root[data-theme="dark"] .careers-page .career-note p {
+  color: #c0aab6;
+}
+
+/* Hero section */
+
+:root[data-theme="dark"] .careers-page .page-hero {
+  background:
+    radial-gradient(
+      ellipse at 82% 30%,
+      rgba(237, 23, 69, 0.17),
+      transparent 38%
+    ),
+    radial-gradient(
+      ellipse at 8% 95%,
+      rgba(255, 92, 145, 0.1),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #1b1018 0%,
+      #130d13 55%,
+      #24111c 100%
+    );
+}
+
+:root[data-theme="dark"] .careers-page .page-hero h1 {
+  color: #fff3f7;
+}
+
+:root[data-theme="dark"] .careers-page .page-hero::before {
+  border-color: rgba(255, 92, 145, 0.2);
+  box-shadow:
+    0 0 0 35px rgba(255, 92, 145, 0.035),
+    0 0 0 75px rgba(255, 92, 145, 0.025);
+}
+
+:root[data-theme="dark"] .careers-page .page-hero::after {
+  background: radial-gradient(
+    circle,
+    rgba(237, 23, 69, 0.2),
+    transparent 70%
+  );
+}
+
+:root[data-theme="dark"] .careers-page .about-hero-decoration {
+  color: rgba(255, 92, 145, 0.055);
+}
+
+/* Benefits section */
+
+:root[data-theme="dark"] .careers-page .career-benefit-card {
+  background: linear-gradient(
+    145deg,
+    #21151e,
+    #181018
+  );
+  border-color: rgba(255, 92, 145, 0.16);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+}
+
+:root[data-theme="dark"] .careers-page .career-benefit-card:hover {
+  border-color: rgba(255, 92, 145, 0.45);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.28),
+    0 0 25px rgba(237, 23, 69, 0.05);
+}
+
+:root[data-theme="dark"] .careers-page .career-benefit-card::after {
+  background: rgba(255, 92, 145, 0.08);
+}
+
+:root[data-theme="dark"] .careers-page .career-benefit-card .service-icon {
+  color: #ff7da7;
+  background: linear-gradient(
+    145deg,
+    #3b1929,
+    #291320
+  );
+  border-color: rgba(255, 92, 145, 0.22);
+  box-shadow: 0 8px 25px rgba(237, 23, 69, 0.08);
+}
+
+/* Job openings section */
+
+:root[data-theme="dark"] .careers-page #openings {
+  background:
+    radial-gradient(
+      ellipse at 0% 30%,
+      rgba(255, 92, 145, 0.08),
+      transparent 40%
+    ),
+    #130d13;
+}
+
+:root[data-theme="dark"] .careers-page .career-job-card {
+  background: linear-gradient(
+    120deg,
+    rgba(37, 21, 31, 0.98),
+    rgba(25, 16, 24, 0.98)
+  );
+  border-color: rgba(255, 92, 145, 0.17);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.16);
+}
+
+:root[data-theme="dark"] .careers-page .career-job-card:hover {
+  border-color: rgba(255, 92, 145, 0.42);
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.28),
+    0 0 25px rgba(237, 23, 69, 0.045);
+}
+
+:root[data-theme="dark"] .careers-page .service-tag {
+  color: #ff9cbb;
+  background: rgba(237, 23, 69, 0.1);
+  border-color: rgba(255, 92, 145, 0.2);
+}
+
+:root[data-theme="dark"] .careers-page .career-job-card:hover .service-tag {
+  background: rgba(237, 23, 69, 0.17);
+}
+
+:root[data-theme="dark"] .careers-page .career-job-meta {
+  border-left-color: rgba(255, 92, 145, 0.2);
+}
+
+/* General career enquiry */
+
+:root[data-theme="dark"] .careers-page .career-note {
+  background: linear-gradient(
+    135deg,
+    #21151e,
+    #181018
+  );
+  border-color: rgba(255, 92, 145, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.14);
+}
+
+:root[data-theme="dark"] .careers-page .service-link {
+  color: #ff7da7;
+}
+
+:root[data-theme="dark"] .careers-page .service-link:hover {
+  color: #ffa0bf;
+}
+
+/* Buttons */
+
+:root[data-theme="dark"] .careers-page .button-light {
+  color: #ff4f87;
+  background: #fff1f6;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+:root[data-theme="dark"] .careers-page .button-light:hover {
+  background: #ffffff;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+}
+
+:root[data-theme="dark"] .careers-page .button-primary {
+  color: #ffffff;
+  background: linear-gradient(
+    110deg,
+    #ed1745,
+    #ff5c91
+  );
+  box-shadow: 0 10px 28px rgba(237, 23, 69, 0.23);
+}
+
+:root[data-theme="dark"] .careers-page .button-primary:hover {
+  box-shadow: 0 14px 36px rgba(237, 23, 69, 0.34);
+}
+
+/* Final CTA — preserve the bold pink brand gradient */
+
+:root[data-theme="dark"] .careers-page .final-cta {
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(255, 255, 255, 0.14),
+      transparent 27%
+    ),
+    linear-gradient(
+      115deg,
+      #870027,
+      #d90e43 58%,
+      #f53572
+    );
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.25);
+}
+
+:root[data-theme="dark"] .careers-page .final-cta h2 {
+  color: #ffffff;
+}
+
+:root[data-theme="dark"] .careers-page .final-cta h2 span {
+  color: #ffd4e3;
+}
+
+:root[data-theme="dark"] .careers-page .final-cta > p {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+:root[data-theme="dark"] .careers-page .final-cta .eyebrow {
+  color: #ffe0eb;
+}
+
+/* Smooth transitions */
+
+:root[data-theme="dark"] .careers-page .career-benefit-card,
+:root[data-theme="dark"] .careers-page .career-job-card,
+:root[data-theme="dark"] .careers-page .career-note,
+:root[data-theme="dark"] .careers-page .button {
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* Mobile job metadata divider */
+
+@media (max-width: 650px) {
+  :root[data-theme="dark"] .careers-page .career-job-meta {
+    border-top-color: rgba(255, 92, 145, 0.2);
+    border-left: 0;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  :root[data-theme="dark"] .careers-page *,
+  :root[data-theme="dark"] .careers-page *::before,
+  :root[data-theme="dark"] .careers-page *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}

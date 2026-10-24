@@ -510,7 +510,7 @@
     grid-template-columns: 1.05fr 0.95fr;
     align-items: center;
     gap: clamp(25px, 4vw, 60px);
-    min-height: 390px;
+    min-height: 690px;
     padding: 55px 7%;
     overflow: hidden;
     background:
@@ -886,3 +886,313 @@
     }
   }
   
+
+
+/* ==========================================
+   SERVICES PAGE — PREMIUM DARK THEME
+   Alvitoz Technology
+========================================== */
+
+/* Hero section */
+:root[data-theme="dark"] .page-hero {
+  background:
+    radial-gradient(
+      circle at 78% 45%,
+      rgba(237, 23, 69, 0.16),
+      transparent 36%
+    ),
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(255, 105, 150, 0.09),
+      transparent 40%
+    ),
+    #0b0b10;
+}
+
+:root[data-theme="dark"] .page-hero-inner h1 {
+  color: #f8f7fb;
+}
+
+:root[data-theme="dark"] .page-hero-inner > p {
+  color: #b7b4c1;
+}
+
+:root[data-theme="dark"] .page-hero .eyebrow {
+  color: #ff789d;
+  background: rgba(237, 23, 69, 0.15);
+  border: 1px solid rgba(255, 120, 157, 0.12);
+}
+
+:root[data-theme="dark"] .page-hero::after {
+  border-color: rgba(255, 105, 150, 0.14);
+  box-shadow:
+    0 0 0 40px rgba(237, 23, 69, 0.035),
+    0 0 0 80px rgba(237, 23, 69, 0.025);
+}
+
+:root[data-theme="dark"] .about-hero-decoration {
+  color: rgba(255, 105, 150, 0.045);
+}
+
+:root[data-theme="dark"] .gradient-text {
+  background: linear-gradient(
+    110deg,
+    #ff426f 10%,
+    #ff91b3 55%,
+    #ed1745 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Hero CTA */
+:root[data-theme="dark"] .button-primary {
+  color: #fff;
+  background: linear-gradient(110deg, #ed1745, #ff608e);
+  box-shadow: 0 8px 25px rgba(237, 23, 69, 0.25);
+}
+
+:root[data-theme="dark"] .button-primary:hover {
+  box-shadow: 0 13px 32px rgba(237, 23, 69, 0.38);
+}
+
+/* Hero illustration — decorative orbs */
+:root[data-theme="dark"] .services-orb-one {
+  background: linear-gradient(
+    135deg,
+    rgba(237, 23, 69, 0.2),
+    rgba(255, 120, 157, 0.04)
+  );
+}
+
+:root[data-theme="dark"] .services-orb-two {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 105, 150, 0.16),
+    rgba(237, 23, 69, 0.07)
+  );
+}
+
+/* CSS phone mockup */
+:root[data-theme="dark"] .services-hero-phone {
+  background: #17151d;
+  border-color: #5a3444;
+  box-shadow:
+    12px 20px 40px rgba(0, 0, 0, 0.45),
+    0 0 0 4px rgba(255, 120, 157, 0.07),
+    0 0 30px rgba(237, 23, 69, 0.08);
+}
+
+:root[data-theme="dark"] .phone-camera {
+  background: #08080c;
+}
+
+:root[data-theme="dark"] .phone-screen {
+  background: linear-gradient(180deg, #201923, #15121a);
+}
+
+:root[data-theme="dark"] .phone-mini-label {
+  color: #ff789d;
+}
+
+:root[data-theme="dark"] .phone-screen h3 {
+  color: #fff2f6;
+}
+
+:root[data-theme="dark"] .phone-screen-image {
+  color: #ff789d;
+  border-color: rgba(255, 120, 157, 0.2);
+  background:
+    radial-gradient(
+      circle at 75% 20%,
+      rgba(255, 105, 150, 0.22) 0 15%,
+      transparent 16%
+    ),
+    linear-gradient(140deg, #35202d, #211722);
+}
+
+:root[data-theme="dark"] .phone-screen-line {
+  background: #49303d;
+}
+
+:root[data-theme="dark"] .phone-screen-row > span {
+  color: #fff;
+  background: linear-gradient(135deg, #ed1745, #ff78a0);
+}
+
+:root[data-theme="dark"] .phone-bottom-nav {
+  color: #ff789d;
+  border-top-color: rgba(255, 120, 157, 0.16);
+}
+
+/* Floating labels */
+:root[data-theme="dark"] .services-floating-card {
+  color: #eee7ef;
+  background: rgba(28, 23, 32, 0.94);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.35),
+    0 0 18px rgba(237, 23, 69, 0.05);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+:root[data-theme="dark"] .floating-icon {
+  color: #ff789d;
+  background: rgba(237, 23, 69, 0.17);
+}
+
+:root[data-theme="dark"] .services-dot-pattern {
+  background-image: radial-gradient(
+    rgba(255, 120, 157, 0.55) 1.5px,
+    transparent 1.5px
+  );
+}
+
+/* Section backgrounds and headings */
+:root[data-theme="dark"] .section {
+  background: #0b0b10;
+}
+
+:root[data-theme="dark"] .section-heading h2 {
+  color: #f8f7fb;
+}
+
+:root[data-theme="dark"] .section-heading > p {
+  color: #b7b4c1;
+}
+
+/* Service cards */
+:root[data-theme="dark"] .service-card {
+  background: linear-gradient(
+    145deg,
+    #1b1922,
+    #111116
+  );
+  border-color: rgba(255, 255, 255, 0.09);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.2);
+}
+
+:root[data-theme="dark"] .service-card::before {
+  background: linear-gradient(
+    135deg,
+    rgba(237, 23, 69, 0.15),
+    rgba(255, 255, 255, 0.01)
+  );
+}
+
+:root[data-theme="dark"] .service-card:hover {
+  border-color: rgba(255, 120, 157, 0.38);
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.3),
+    0 0 28px rgba(237, 23, 69, 0.06);
+}
+
+:root[data-theme="dark"] .service-icon {
+  color: #ff789d;
+  background: linear-gradient(
+    135deg,
+    rgba(237, 23, 69, 0.22),
+    rgba(255, 120, 157, 0.09)
+  );
+  border-color: rgba(255, 120, 157, 0.17);
+}
+
+:root[data-theme="dark"] .service-number {
+  color: #9b8491;
+}
+
+:root[data-theme="dark"] .service-card h3 {
+  color: #f8f7fb;
+}
+
+:root[data-theme="dark"] .service-card > p {
+  color: #b7b4c1;
+}
+
+/* Technology tags */
+:root[data-theme="dark"] .service-tag {
+  color: #ffc0d1;
+  background: rgba(237, 23, 69, 0.1);
+  border-color: rgba(255, 120, 157, 0.16);
+}
+
+:root[data-theme="dark"] .service-card:hover .service-tag {
+  border-color: rgba(255, 120, 157, 0.3);
+}
+
+/* Service links */
+:root[data-theme="dark"] .service-link {
+  color: #ff789d;
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+:root[data-theme="dark"] .service-link:hover {
+  color: #ffb0c6;
+}
+
+/* Final CTA — keep the pink brand gradient */
+:root[data-theme="dark"] .final-cta {
+  background: linear-gradient(
+    120deg,
+    #850b2d 0%,
+    #d81343 48%,
+    #fa5687 100%
+  );
+  border-color: rgba(255, 120, 157, 0.2);
+  box-shadow:
+    0 25px 65px rgba(0, 0, 0, 0.3),
+    0 10px 35px rgba(237, 23, 69, 0.12);
+}
+
+:root[data-theme="dark"] .final-cta .eyebrow {
+  color: #ffe0ea;
+}
+
+:root[data-theme="dark"] .final-cta h2 {
+  color: #fff;
+}
+
+:root[data-theme="dark"] .final-cta h2 span {
+  color: #ffe0ea;
+}
+
+:root[data-theme="dark"] .final-cta > p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+:root[data-theme="dark"] .button-light {
+  color: #c8103c;
+  background: #fff;
+}
+
+:root[data-theme="dark"] .button-light:hover {
+  color: #a80b32;
+  background: #fff0f5;
+}
+
+/* Smooth transitions */
+:root[data-theme="dark"] .page-hero,
+:root[data-theme="dark"] .section,
+:root[data-theme="dark"] .service-card,
+:root[data-theme="dark"] .services-floating-card,
+:root[data-theme="dark"] .services-hero-phone,
+:root[data-theme="dark"] .phone-screen {
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .services-floating-card,
+  .services-hero-phone,
+  .page-hero-inner {
+    animation: none !important;
+    transition: none !important;
+  }
+}

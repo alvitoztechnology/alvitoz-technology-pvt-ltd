@@ -17,7 +17,7 @@ const projects = [
   title: "Foodvito – Food Ordering & Delivery Platform",
   description:
     "A customer-focused food ordering platform designed to connect customers with restaurants through convenient ordering and delivery services. Built around a low-commission model to help food businesses retain more earnings while making great food more accessible to customers.",
-  tags: ["Next.js", "TypeScript", "FoodTech", "Online Ordering"],
+  tags: ["FoodTech", "Online Ordering"],
   image: "/images/foodvito.png",
   imageAlt: "Foodvito food ordering and delivery application"
   },
@@ -27,7 +27,7 @@ const projects = [
     title: "Ravito – Ride Booking & Transportation Platform",
     description:
       "A customer-focused transportation platform designed to make everyday travel affordable, convenient, and reliable. Built around a low-commission business model, Ravito aims to help drivers earn more while providing customers with accessible ride-booking services as an alternative to traditional platforms.",
-    tags: ["Next.js", "TypeScript", "Ride Booking", "Transportation"],
+    tags: ["Ride Booking", "Transportation"],
     image: "/images/ravito.png",
     imageAlt: "Ravito ride booking and transportation application"
     
@@ -38,7 +38,7 @@ const projects = [
   title: "VitoMart – Online Shopping & Essentials Platform",
   description:
     "A customer-focused shopping platform designed to connect customers with local shops and make everyday essentials easily accessible. Built around a low-commission business model, VitoMart aims to help shop owners retain more earnings while providing customers with a convenient, affordable, and seamless shopping experience.",
-  tags: ["Next.js", "TypeScript", "E-Commerce", "Local Shopping"],
+  tags: ["E-Commerce", "Local Shopping"],
   image: "/images/vitomart.png",
   imageAlt: "VitoMart online shopping and local store delivery application"
   },
@@ -48,8 +48,6 @@ const projects = [
   description:
     "A unified rider application designed to connect delivery partners across Foodvito, Ravito, and VitoMart through a single platform. Dravito aims to simplify order management, streamline delivery workflows, and help riders access delivery opportunities across multiple services, reducing app switching and improving earning potential.",
   tags: [
-    "Next.js",
-    "TypeScript",
     "Multi-Platform Integration",
     "Delivery Management"
   ],
@@ -64,7 +62,7 @@ export default function PortfolioPage() {
 
 <section className="page-hero portfolio-hero">
   <div className="page-hero-inner">
-    <span className="eyebrow">✦ OUR PORTFOLIO</span>
+    <span className="eyebrow">OUR PORTFOLIO</span>
 
     <h1>
       Our Work.
@@ -117,44 +115,60 @@ export default function PortfolioPage() {
           </p>
         </div>
 
-        <div className="portfolio-grid portfolio-image-grid">
-          {projects.map((project) => (
-            <article className="project-card portfolio-image-card" key={project.number}>
-              <div className="portfolio-image-wrap">
-                <Image
-                  src={project.image}
-                  alt={project.imageAlt}
-                  width={380}
-                  height={195}
-                  className="portfolio-project-image"
-                />
-                <span className="portfolio-image-number">
-                  {project.number}
-                </span>
-              </div>
+        
+<div className="portfolio-grid portfolio-image-grid">
+  {projects.map((project) => (
+    <article
+      className="project-card portfolio-image-card"
+      key={project.number}
+    >
+      <div className="portfolio-image-wrap">
+        <Image
+          src={project.image}
+          alt={project.imageAlt}
+          width={380}
+          height={195}
+          className="portfolio-project-image"
+        />
 
-              <div className="project-content">
-                <span className="portfolio-category">
-                  {project.category}
-                </span>
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
+        <span className="portfolio-image-number">
+          {project.number}
+        </span>
 
-                <div className="service-tags">
-                  {project.tags.map((tag) => (
-                    <span className="service-tag" key={tag}>
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+        {/* Premium Coming Soon overlay */}
+        <div className="portfolio-coming-soon">
+          <div className="portfolio-coming-soon-badge">
+            <span className="portfolio-coming-soon-dot" />
+            <span>COMING SOON</span>
+          </div>
+          <p>Something exciting is on its way</p>
+        </div>
+      </div>
 
-                <Link href="/contact" className="portfolio-project-link">
-                  Discuss a Similar Project <span>↗</span>
-                </Link>
-              </div>
-            </article>
+      <div className="project-content">
+        <span className="portfolio-category">
+          {project.category}
+        </span>
+
+        <h3>{project.title}</h3>
+        <p>{project.description}</p>
+
+        <div className="service-tags">
+          {project.tags.map((tag) => (
+            <span className="service-tag" key={tag}>
+              {tag}
+            </span>
           ))}
         </div>
+
+        <Link href="/contact" className="portfolio-project-link">
+          Discuss a Similar Project <span>↗</span>
+        </Link>
+      </div>
+    </article>
+  ))}
+</div>
+
       </section>
 
       <section className="section">

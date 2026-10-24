@@ -1,7 +1,10 @@
 
+
 import type { Metadata } from "next";
 import Link from "next/link";
 import "./careers.css";
+import CareerApplication from "@/components/CareerApplication";
+
 
 export const metadata: Metadata = {
   title: "Careers",
@@ -141,14 +144,12 @@ export default function CareersPage() {
               <div className="career-job-meta">
                 <span>◷ {job.type}</span>
                 <span>⌖ {job.location}</span>
-                <Link
-                  href={`/contact?subject=${encodeURIComponent(
-                    `Career enquiry: ${job.title}`
-                  )}`}
-                  className="button button-primary"
-                >
-                  Express Interest →
-                </Link>
+                
+<CareerApplication
+  jobTitle={job.title}
+  department={job.department}
+/>
+
               </div>
             </article>
           ))}
