@@ -2,36 +2,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 import { Moon, Sun } from "lucide-react";
 
-type Theme = "light" | "dark";
-
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>("light");
+  const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("alvitoz-theme");
-
-    const initialTheme: Theme =
-      savedTheme === "dark" || savedTheme === "light"
-        ? savedTheme
-        : window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "light";
-
-    setTheme(initialTheme);
-    document.documentElement.dataset.theme = initialTheme;
     setMounted(true);
   }, []);
-
-  function toggleTheme() {
-    const nextTheme: Theme = theme === "light" ? "dark" : "light";
-
-    document.documentElement.dataset.theme = nextTheme;
-    localStorage.setItem("alvitoz-theme", nextTheme);
-    setTheme(nextTheme);
-  }
 
   if (!mounted) {
     return (
@@ -46,15 +26,17 @@ export default function ThemeToggle() {
     );
   }
 
+  const isDark = theme === "dark";
+
   return (
     <button
       type="button"
       className="theme-toggle"
-      onClick={toggleTheme}
-      aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
-      title={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+      aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
+      title={`Switch to ${isDark ? "light" : "dark"} mode`}
     >
-      {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
+      {isDark ? <Sun size={20} /> : <Moon size={20} />}
     </button>
   );
 }

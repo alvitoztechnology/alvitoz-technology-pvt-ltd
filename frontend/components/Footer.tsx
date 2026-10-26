@@ -25,10 +25,10 @@ const serviceLinks = [
 
 const socialLinks = [
   { label: "LinkedIn", href: "https://www.linkedin.com/", symbol: "in" },
-  { label: "Twitter", href: "https://twitter.com/", symbol: "𝕏" },
-  { label: "Instagram", href: "https://www.instagram.com/", symbol: "◎" },
-  // { label: "GitHub", href: "https://github.com/", symbol: "⌘" },
-  { label: "YouTube", href: "https://www.youtube.com/", symbol: "▶" },
+  { label: "Twitter", href: "https://x.com/AlvitozTech", symbol: "𝕏" },
+  { label: "Instagram", href: "https://www.instagram.com/alvitoztechnology/?hl=en", symbol: "◎" },
+  { label: "Facebook", href: "https://www.facebook.com/profile.php?id=61595599454359", symbol: "f" },
+  // { label: "YouTube", href: "https://www.youtube.com/", symbol: "▶" },
 ];
 
 export default function Footer() {
