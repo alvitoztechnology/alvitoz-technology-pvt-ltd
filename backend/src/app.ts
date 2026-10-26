@@ -11,16 +11,25 @@ const app = express();
 
 app.use(helmet());
 
-// Put this before your API routes.
+
 const allowedOrigins = [
-  "https://alvitoz-technology-pvt-vmgrhjk80-alvitoztechnology.vercel.app",
   "https://alvitoztechnology.com",
   "https://www.alvitoztechnology.com",
 ];
 
 app.use(
   cors({
-    origin: allowedOrigins,
+    origin: (origin, callback) => {
+      if (
+        !origin ||
+        allowedOrigins.includes(origin) ||
+        /^https:\/\/alvitoz-technology-pvt-[a-z0-9]+-alvitoztechnology\.vercel\.app$/.test(origin)
+      ) {
+        callback(null, true);
+      } else {
+        callback(new Error("Origin not allowed by CORS"));
+      }
+    },
     credentials: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
