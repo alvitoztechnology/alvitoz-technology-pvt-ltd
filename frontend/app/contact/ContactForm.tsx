@@ -5,7 +5,7 @@ import { useCallback, useState } from "react";
 import Toast from "./Toast";
 
 const API_URL =
-  process.env.BACKEND_URL || "http://localhost:4000";
+  process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:4000";
 
 type ToastState = {
   message: string;
