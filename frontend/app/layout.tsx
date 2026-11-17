@@ -4,6 +4,10 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Providers from "./providers";
 import "./globals.css";
+import "./home.css";
+import "./product.css";
+import WhatsAppChat from "@/components/WhatsAppChat";
+// import SocialDock from "@/components/SocialDock";
 
 export const metadata: Metadata = {
   title: {
@@ -28,6 +32,7 @@ export default function RootLayout({
         <Providers>
           <Navbar />
           {children}
+          <WhatsAppChat />
           <Footer />
         </Providers>
       </body>

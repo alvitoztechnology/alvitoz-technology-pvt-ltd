@@ -1,0 +1,146 @@
+
+export const services = [
+    {
+      slug: "web-development",
+      title: "Web Development",
+      subtitle: "Digital experiences built for growth.",
+      description:
+        "We build modern, responsive and scalable websites and web applications that help businesses establish their digital presence and grow.",
+      category: "WEB DEVELOPMENT",
+      technologies: [
+        "Next.js",
+        "React",
+        "Node.js",
+        "TypeScript",
+        "PostgreSQL",
+        "Prisma",
+      ],
+      features: [
+        "Custom Website Development",
+        "Business Web Applications",
+        "E-commerce Platforms",
+        "Backend & API Development",
+        "Admin Dashboards",
+        "Performance Optimization",
+      ],
+    },
+    {
+      slug: "mobile-apps",
+      title: "Mobile App Development",
+      subtitle: "Powerful applications. Seamless experiences.",
+      description:
+        "We develop scalable Android and iOS applications with intuitive interfaces, reliable backend systems and seamless user experiences.",
+      category: "MOBILE DEVELOPMENT",
+      technologies: [
+        "Flutter",
+        "React Native",
+        "Dart",
+        "Node.js",
+        "Firebase",
+        "REST APIs",
+      ],
+      features: [
+        "Android App Development",
+        "iOS App Development",
+        "Cross-Platform Applications",
+        "API Integration",
+        "Real-Time Applications",
+        "App Maintenance",
+      ],
+    },
+    {
+      slug: "ui-ux-design",
+      title: "UI/UX Design",
+      subtitle: "Design that makes technology feel effortless.",
+      description:
+        "We create intuitive, engaging and user-centered digital experiences through thoughtful research, wireframing and interface design.",
+      category: "DESIGN & EXPERIENCE",
+      technologies: [
+        "Figma",
+        "Prototyping",
+        "Design Systems",
+        "Wireframing",
+        "User Research",
+      ],
+      features: [
+        "Website UI/UX Design",
+        "Mobile App Design",
+        "User Experience Research",
+        "Interactive Prototypes",
+        "Design Systems",
+        "Usability Optimization",
+      ],
+    },
+    {
+      slug: "cloud-solutions",
+      title: "Cloud Solutions",
+      subtitle: "Infrastructure designed to scale.",
+      description:
+        "We help businesses build, deploy and manage reliable cloud infrastructure with a focus on scalability, performance and security.",
+      category: "CLOUD & INFRASTRUCTURE",
+      technologies: [
+        "AWS",
+        "Docker",
+        "Nginx",
+        "Linux",
+        "CI/CD",
+        "PostgreSQL",
+      ],
+      features: [
+        "Cloud Infrastructure Setup",
+        "Cloud Deployment",
+        "Server Management",
+        "Database Management",
+        "DevOps Automation",
+        "Monitoring & Optimization",
+      ],
+    },
+    {
+      slug: "digital-strategy",
+      title: "Digital Strategy",
+      subtitle: "Turning business goals into digital direction.",
+      description:
+        "We help businesses identify digital opportunities, plan technology initiatives and create strategies that support long-term growth.",
+      category: "DIGITAL CONSULTING",
+      technologies: [
+        "Business Analysis",
+        "Product Strategy",
+        "Market Research",
+        "Digital Transformation",
+        "Analytics",
+      ],
+      features: [
+        "Digital Transformation",
+        "Product Planning",
+        "Technology Consulting",
+        "Business Process Optimization",
+        "Product Roadmapping",
+        "Growth Strategy",
+      ],
+    },
+    {
+      slug: "product-engineering",
+      title: "Product Engineering",
+      subtitle: "From product vision to production.",
+      description:
+        "We transform product ideas into reliable digital solutions through architecture, engineering, testing and continuous improvement.",
+      category: "PRODUCT ENGINEERING",
+      technologies: [
+        "Node.js",
+        "TypeScript",
+        "Microservices",
+        "Redis",
+        "Kafka",
+        "Docker",
+      ],
+      features: [
+        "Product Architecture",
+        "MVP Development",
+        "Backend Engineering",
+        "API Development",
+        "System Integration",
+        "Product Maintenance",
+      ],
+    },
+  ];
+  

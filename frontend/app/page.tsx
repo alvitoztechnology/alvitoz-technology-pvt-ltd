@@ -13,8 +13,9 @@ import {
 import "./home.css";
 import AnimatedStat from "./AnimatedStat";
 import FeaturedProjects from "./FeaturedProjects";
-
-
+import { motion } from "motion/react";
+import ScrollReveal
+ from "@/components/ScrollReveal";
 const services = [
   {
     icon: "monitor",
@@ -51,6 +52,7 @@ const services = [
 const projects = [
   {
     name: "Foodvito",
+    slug: "foodvito",
     type: "Food Delivery App",
     image: "/images/foodvito.png",
     description:
@@ -58,32 +60,35 @@ const projects = [
   },
   {
     name: "Ravito",
+    slug: "ravito",
     type: "Transportation App",
     image: "/images/ravito.png",
     description:
-      "A ride-booking platform focused on affordable transportation, lower commissions, and better earning opportunities for drivers and convenient travel for customers.",
+      "A ride-booking platform focused on affordable transportation, lower commissions, and better earning opportunities for drivers.",
   },
   {
     name: "VitoMart",
+    slug: "vitomart",
     type: "Shopping & Delivery App",
     image: "/images/vitomart.png",
     description:
-      "An online shopping platform connecting customers with local shops and everyday essentials through convenient delivery and a low-commission model that supports local businesses.",
+      "An online shopping platform connecting customers with local shops and everyday essentials through convenient delivery.",
   },
   {
     name: "Dravito",
+    slug: "dravito",
     type: "Rider & Delivery Management App",
     image: "/images/dravito.png",
     description:
-      "A unified rider platform connecting Foodvito, Ravito, and VitoMart, enabling delivery partners to manage orders across multiple services from one application and access more earning opportunities.",
+      "A unified rider platform connecting Foodvito, Ravito, and VitoMart.",
   },
 ];
 
 const stats = [
-  { number: "10", label: "Projects Delivered", icon: "▣" },
-  { number: "9", label: "Happy Clients", icon: "✿" },
+  { number: "1", label: "Projects Delivered", icon: "▣" },
+  { number: "1", label: "Happy Clients", icon: "✿" },
   { number: "10", label: "Team Members", icon: "♧" },
-  { number: "5", label: "Years Experience", icon: "♙" },
+  { number: "1", label: "Years Experience", icon: "♙" },
 ];
 
 export default function Home() {
@@ -116,17 +121,56 @@ export default function Home() {
       </section>
 
       
-<section className="alv-stats" aria-label="Company highlights">
-  {stats.map((stat) => (
-    <AnimatedStat
-      key={stat.label}
-      number={stat.number}
-      label={stat.label}
-      icon={stat.icon}
-    />
-  ))}
-</section>
 
+      <motion.section
+  className="alv-stats"
+  aria-label="Company highlights"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.2 }}
+  variants={{
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  }}
+>
+  {stats.map((stat) => (
+    <motion.div
+      key={stat.label}
+      variants={{
+        hidden: {
+          opacity: 0,
+          y: 45,
+          scale: 0.94,
+          filter: "blur(6px)",
+        },
+        visible: {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          filter: "blur(0px)",
+        },
+      }}
+      transition={{
+        duration: 0.75,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+    >
+      <AnimatedStat
+        number={stat.number}
+        label={stat.label}
+        icon={stat.icon}
+      />
+    </motion.div>
+  ))}
+</motion.section>
+
+<ScrollReveal direction="up" duration={1}>
+  <FeaturedProjects projects={projects} />
+</ScrollReveal>
 
       <section className="alv-section" id="services">
         <div className="alv-section-heading">
@@ -134,40 +178,134 @@ export default function Home() {
           <h2>Our <span>Services</span></h2>
           <p>We provide end-to-end technology solutions to help businesses build, scale, and succeed in the digital world.</p>
         </div>
-        <div className="alv-service-grid">
-          {services.map((service) => (
-            <article className="alv-service-card" key={service.title}>
-              <div className="alv-service-icon" aria-hidden="true">
-  {service.icon === "monitor" && <Monitor />}
-  {service.icon === "smartphone" && <Smartphone />}
-  {service.icon === "server" && <Server />}
-  {service.icon === "palette" && <Palette />}
-  {service.icon === "cloud" && <Cloud />}
-  {service.icon === "settings" && <Settings />}
-</div>
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-              <Link href="/services" className="alv-text-link">Learn More <span>→</span></Link>
-            </article>
-          ))}
-        </div>
+        
+<motion.div
+  className="alv-service-grid"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.12 }}
+  variants={{
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+      },
+    },
+  }}
+>
+  {services.map((service, index) => (
+    <motion.article
+      className="alv-service-card"
+      key={service.title}
+      variants={{
+        hidden: {
+          opacity: 0,
+          y: 65,
+          rotateX: 8,
+          filter: "blur(7px)",
+        },
+        visible: {
+          opacity: 1,
+          y: 0,
+          rotateX: 0,
+          filter: "blur(0px)",
+        },
+      }}
+      transition={{
+        duration: 0.8,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      whileHover={{
+        y: -9,
+        transition: { duration: 0.25 },
+      }}
+      style={{ transformPerspective: 1000 }}
+    >
+      <motion.div
+        className="alv-service-icon"
+        whileHover={{
+          scale: 1.15,
+          rotate: -10,
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 300,
+          damping: 12,
+        }}
+      >
+        {service.icon === "monitor" && <Monitor />}
+        {service.icon === "smartphone" && <Smartphone />}
+        {service.icon === "server" && <Server />}
+        {service.icon === "palette" && <Palette />}
+        {service.icon === "cloud" && <Cloud />}
+        {service.icon === "settings" && <Settings />}
+      </motion.div>
+
+      <h3>{service.title}</h3>
+      <p>{service.description}</p>
+
+      <Link href="/services" className="alv-text-link">
+        Learn More <span>→</span>
+      </Link>
+    </motion.article>
+  ))}
+</motion.div>
+
       </section>
 
-      <FeaturedProjects projects={projects} />
+      
+<section className="alv-cta-section">
+  <ScrollReveal direction="up" duration={1}>
+    <motion.div
+      className="alv-cta"
+      whileHover={{ y: -4 }}
+      transition={{ duration: 0.35 }}
+    >
+      <motion.div
+        className="alv-cta-copy"
+        initial={{ opacity: 0, x: -35 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.85, delay: 0.15 }}
+      >
+        <span className="alv-eyebrow">
+          ✦ LET&apos;S WORK TOGETHER
+        </span>
 
-      <section className="alv-cta-section">
-        <div className="alv-cta">
-          <div className="alv-cta-copy">
-            <span className="alv-eyebrow">✦ LET&apos;S WORK TOGETHER</span>
-            <h2>Ready to Build Something Amazing?</h2>
-            <p>Let&apos;s turn your ideas into powerful digital solutions.</p>
-            <Link href="/contact" className="alv-btn alv-btn-white">Get in Touch <span>→</span></Link>
-          </div>
-          <div className="alv-cta-image" aria-hidden="true">
-            <Image src="/images/cta-banner.jpg" alt="" width={474} height={164} />
-          </div>
-        </div>
-      </section>
+        <h2>Ready to Build Something Amazing?</h2>
+
+        <p>
+          Let&apos;s turn your ideas into powerful digital solutions.
+        </p>
+
+        <Link href="/contact" className="alv-btn alv-btn-white">
+          Get in Touch <span>→</span>
+        </Link>
+      </motion.div>
+
+      <motion.div
+        className="alv-cta-image"
+        aria-hidden="true"
+        initial={{ opacity: 0, scale: 0.85, x: 35 }}
+        whileInView={{ opacity: 1, scale: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{
+          duration: 1,
+          delay: 0.25,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+      >
+        <Image
+          src="/images/cta-banner.jpg"
+          alt=""
+          width={474}
+          height={164}
+        />
+      </motion.div>
+    </motion.div>
+  </ScrollReveal>
+</section>
+
     </main>
   );
 }

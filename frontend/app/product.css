@@ -1,0 +1,949 @@
+
+/* =====================================
+   ALVITOZ PRODUCT PAGES
+===================================== */
+
+.alv-product-page {
+    --product-pink: #ed1745;
+    --product-light: #fff4f7;
+    --product-muted: #766873;
+    --product-dark: #251820;
+  }
+  
+  /* PRODUCT NAVBAR */
+  
+  .alv-product-nav {
+    min-height: 82px;
+    padding: 0 clamp(28px, 7vw, 100px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    background: #fff;
+    border-bottom: 1px solid #f5e7ec;
+  }
+  
+  .alv-product-brand {
+    color: #261b22;
+    font-family: "Manrope", sans-serif;
+    font-size: 24px;
+    font-weight: 850;
+    letter-spacing: -1.2px;
+    text-decoration: none;
+  }
+  
+  .alv-product-brand span {
+    color: var(--product-pink);
+  }
+  
+  .alv-product-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+  }
+  
+  .alv-product-nav-links a,
+  .alv-product-footer a {
+    color: #64545e;
+    font-size: 12px;
+    font-weight: 650;
+    text-decoration: none;
+    transition: color .25s ease;
+  }
+  
+  .alv-product-nav-links a:hover,
+  .alv-product-footer a:hover {
+    color: var(--product-pink);
+  }
+  
+  /* HERO */
+  
+  .alv-product-hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    align-items: center;
+    gap: 55px;
+    min-height: 570px;
+    padding: 75px clamp(28px, 7vw, 100px);
+    overflow: hidden;
+    background:
+      radial-gradient(
+        ellipse at 85% 50%,
+        rgba(255, 87, 135, .18),
+        transparent 42%
+      ),
+      linear-gradient(
+        115deg,
+        #fff 5%,
+        #fff8fa 58%,
+        #ffedf2 100%
+      );
+  }
+  
+  .alv-product-hero-copy {
+    position: relative;
+    z-index: 2;
+    max-width: 610px;
+  }
+  
+  .alv-product-hero-copy h1 {
+    margin: 25px 0 20px;
+    color: #251820;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(43px, 5vw, 68px);
+    font-weight: 850;
+    line-height: 1.08;
+    letter-spacing: -2.8px;
+  }
+  
+  .alv-product-hero-copy h1 span {
+    display: block;
+    color: var(--product-pink);
+  }
+  
+  .alv-product-hero-copy > p {
+    max-width: 510px;
+    color: var(--product-muted);
+    font-size: 15px;
+    line-height: 1.9;
+  }
+  
+  .alv-product-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 30px;
+  }
+  
+  .alv-product-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 27px;
+    color: #8b6e79;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  
+  /* HERO VISUAL */
+  
+  .alv-product-hero-visual {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 440px;
+    isolation: isolate;
+  }
+  
+  .alv-product-glow {
+    position: absolute;
+    width: 85%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      rgba(255, 91, 143, .22),
+      rgba(255, 170, 194, .09) 55%,
+      transparent 72%
+    );
+    filter: blur(20px);
+    animation: alv-product-glow 6s ease-in-out infinite alternate;
+    z-index: -1;
+  }
+  
+  .alv-product-image-frame {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: min(100%, 510px);
+    min-height: 390px;
+    padding: 28px;
+    border: 1px solid rgba(255,255,255,.9);
+    border-radius: 34px;
+    background: rgba(255,255,255,.65);
+    box-shadow: 0 25px 75px rgba(190,35,75,.10);
+    backdrop-filter: blur(12px);
+    animation: alv-product-float 6s ease-in-out infinite;
+  }
+  
+  .alv-product-image-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: contain;
+  }
+  
+  .alv-product-floating-card {
+    position: absolute;
+    right: -5px;
+    bottom: 35px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 20px;
+    border: 1px solid #fff;
+    border-radius: 16px;
+    background: rgba(255,255,255,.96);
+    box-shadow: 0 12px 35px rgba(130,30,65,.12);
+  }
+  
+  .alv-product-floating-icon {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    color: #fff;
+    background: var(--product-pink);
+  }
+  
+  .alv-product-floating-card strong,
+  .alv-product-floating-card span {
+    display: block;
+  }
+  
+  .alv-product-floating-card strong {
+    color: #2b1c24;
+    font-size: 13px;
+  }
+  
+  .alv-product-floating-card div span {
+    margin-top: 4px;
+    color: #8b7a83;
+    font-size: 9px;
+  }
+  
+  /* INTRODUCTION */
+  
+  .alv-product-intro {
+    display: grid;
+    grid-template-columns: 1.4fr .6fr;
+    align-items: center;
+    gap: 60px;
+    padding: 85px clamp(28px, 7vw, 100px);
+  }
+  
+  .alv-product-intro-heading h2,
+  .alv-product-partner-copy h2,
+  .alv-product-download h2 {
+    margin: 18px 0;
+    color: var(--product-dark);
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(32px, 3.5vw, 44px);
+    font-weight: 850;
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+  }
+  
+  .alv-product-intro-heading h2 span,
+  .alv-product-download h2 span {
+    color: var(--product-pink);
+  }
+  
+  .alv-product-intro-heading p,
+  .alv-product-partner-copy > p {
+    max-width: 700px;
+    color: var(--product-muted);
+    font-size: 14px;
+    line-height: 1.9;
+  }
+  
+  .alv-product-audience {
+    padding: 30px;
+    border: 1px solid #f7dce5;
+    border-radius: 20px;
+    background: #fff6f9;
+  }
+  
+  .alv-product-audience > span {
+    color: var(--product-pink);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+  }
+  
+  .alv-product-audience h3 {
+    margin: 12px 0 0;
+    color: #2a1b23;
+    font-size: 19px;
+    line-height: 1.5;
+  }
+  
+  /* FEATURES */
+  
+  .alv-product-features {
+    background: #fff8fa;
+  }
+  
+  .alv-product-features .alv-service-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 225px;
+  }
+  
+  .alv-product-features .alv-service-icon {
+    display: grid;
+    place-items: center;
+    font-size: 12px;
+    font-weight: 850;
+  }
+  
+  .alv-product-features .alv-service-icon span {
+    font-size: 13px;
+  }
+  
+  /* HOW IT WORKS */
+  
+  .alv-product-process {
+    padding: 85px clamp(28px, 7vw, 100px);
+    background: #fff;
+  }
+  
+  .alv-product-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 50px;
+  }
+  
+  .alv-product-step {
+    position: relative;
+    padding: 32px;
+    border: 1px solid #f3dce4;
+    border-radius: 20px;
+    background: #fff;
+    transition: .3s ease;
+  }
+  
+  .alv-product-step:hover {
+    transform: translateY(-6px);
+    border-color: #f5a7bc;
+    box-shadow: 0 15px 35px rgba(190,35,75,.08);
+  }
+  
+  .alv-step-number {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: #f2b5c5;
+    font-family: "Manrope", sans-serif;
+    font-size: 42px;
+    font-weight: 850;
+  }
+  
+  .alv-product-step h3 {
+    margin: 0 0 12px;
+    color: #281a22;
+    font-size: 20px;
+  }
+  
+  .alv-product-step p {
+    margin: 0;
+    color: var(--product-muted);
+    font-size: 13px;
+    line-height: 1.8;
+  }
+  
+  /* PARTNERS */
+  
+  .alv-product-partners {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+    gap: 55px;
+    padding: 75px clamp(28px, 7vw, 100px);
+    background: linear-gradient(120deg, #fff5f8, #ffebf1);
+  }
+  
+  .alv-product-partner-copy {
+    max-width: 620px;
+  }
+  
+  .alv-product-partner-copy h2 {
+    margin-top: 22px;
+  }
+  
+  .alv-product-partner-copy ul {
+    display: grid;
+    gap: 17px;
+    padding: 0;
+    margin: 28px 0;
+    list-style: none;
+  }
+  
+  .alv-product-partner-copy li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #54424b;
+    font-size: 13px;
+    font-weight: 650;
+  }
+  
+  .alv-product-partner-copy li span {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    color: #fff;
+    background: var(--product-pink);
+  }
+  
+  .alv-product-partner-art {
+    display: grid;
+    place-items: center;
+    min-height: 340px;
+  }
+  
+  .alv-product-partner-art img {
+    width: 100%;
+    max-width: 390px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 30px rgba(190,35,75,.13));
+  }
+  
+  /* APP DOWNLOAD */
+  
+  .alv-product-download {
+    padding: 90px 24px;
+    text-align: center;
+    background:
+      radial-gradient(
+        ellipse at 50% 0%,
+        rgba(255,255,255,.15),
+        transparent 55%
+      ),
+      linear-gradient(120deg, #a90c35, #ed1745 60%, #ff5988);
+  }
+  
+  .alv-product-download .alv-eyebrow {
+    color: #fff;
+    background: rgba(255,255,255,.14);
+    border-color: rgba(255,255,255,.25);
+  }
+  
+  .alv-product-download h2 {
+    max-width: 700px;
+    margin: 25px auto 15px;
+    color: #fff;
+  }
+  
+  .alv-product-download h2 span {
+    color: #ffe0e9;
+  }
+  
+  .alv-product-download > p {
+    max-width: 560px;
+    margin: 0 auto;
+    color: rgba(255,255,255,.88);
+    font-size: 14px;
+    line-height: 1.8;
+  }
+  
+  .alv-store-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 35px;
+  }
+  
+  .alv-store-button {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    min-width: 220px;
+    padding: 15px 19px;
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: 13px;
+    color: #fff;
+    background: rgba(255,255,255,.12);
+    text-align: left;
+  }
+  
+  .alv-store-icon {
+    font-size: 27px;
+  }
+  
+  .alv-store-button small,
+  .alv-store-button strong {
+    display: block;
+  }
+  
+  .alv-store-button small {
+    margin-bottom: 3px;
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+  
+  .alv-store-button strong {
+    font-size: 15px;
+  }
+  
+  .alv-store-coming {
+    margin-left: auto;
+    font-size: 9px;
+    font-weight: 750;
+    white-space: nowrap;
+  }
+  
+  /* FOOTER */
+  
+  .alv-product-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 32px clamp(28px, 7vw, 100px);
+    background: #fff;
+  }
+  
+  .alv-product-footer p,
+  .alv-product-footer small {
+    color: #84727c;
+    font-size: 11px;
+  }
+  
+  .alv-product-footer > div {
+    display: flex;
+    gap: 22px;
+  }
+  
+  /* ANIMATIONS */
+  
+  @keyframes alv-product-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes alv-product-glow {
+    from { transform: scale(.94); opacity: .7; }
+    to { transform: scale(1.06); opacity: 1; }
+  }
+  
+  /* TABLET */
+  
+  @media (max-width: 950px) {
+    .alv-product-hero {
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+  
+    .alv-product-hero-copy h1 {
+      font-size: 45px;
+    }
+  
+    .alv-product-intro {
+      gap: 25px;
+    }
+  
+    .alv-product-partners {
+      gap: 25px;
+    }
+  }
+  
+  /* MOBILE */
+  
+  @media (max-width: 650px) {
+    .alv-product-nav {
+      min-height: 70px;
+      padding: 0 20px;
+    }
+  
+    .alv-product-nav-links {
+      display: none;
+    }
+  
+    .alv-product-nav > .alv-btn {
+      min-height: 39px;
+      padding: 0 13px;
+      font-size: 10px;
+    }
+  
+    .alv-product-hero {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 50px 22px 30px;
+    }
+  
+    .alv-product-hero-copy h1 {
+      font-size: 43px;
+      letter-spacing: -1.8px;
+    }
+  
+    .alv-product-hero-copy > p {
+      font-size: 13px;
+    }
+  
+    .alv-product-hero-visual {
+      min-height: 300px;
+    }
+  
+    .alv-product-image-frame {
+      min-height: 260px;
+      padding: 18px;
+    }
+  
+    .alv-product-floating-card {
+      right: 0;
+      bottom: 8px;
+    }
+  
+    .alv-product-intro,
+    .alv-product-partners {
+      grid-template-columns: 1fr;
+      padding: 55px 22px;
+    }
+  
+    .alv-product-intro-heading h2,
+    .alv-product-partner-copy h2 {
+      font-size: 33px;
+    }
+  
+    .alv-product-process {
+      padding: 55px 22px;
+    }
+  
+    .alv-product-steps {
+      grid-template-columns: 1fr;
+      margin-top: 30px;
+    }
+  
+    .alv-product-features {
+      padding: 55px 22px;
+    }
+  
+    .alv-product-features .alv-service-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .alv-product-partner-art {
+      min-height: 240px;
+    }
+  
+    .alv-product-download {
+      padding: 65px 20px;
+    }
+  
+    .alv-store-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .alv-store-button {
+      width: 100%;
+      max-width: 300px;
+    }
+  
+    .alv-product-footer {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 30px 22px;
+    }
+  
+    .alv-product-footer > div {
+      flex-wrap: wrap;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .alv-product-image-frame,
+    .alv-product-glow {
+      animation: none;
+    }
+  
+    .alv-product-step {
+      transition: none;
+    }
+  }
+  
+
+
+
+/* ==========================================
+   ALVITOZ PRODUCT PAGES — COMPLETE DARK THEME
+   Append at the END of product.css
+========================================== */
+
+:root[data-theme="dark"] .alv-product-page {
+  --product-pink: #ff4778;
+  --product-light: #21151e;
+  --product-muted: #c1adba;
+  --product-dark: #fff1f6;
+
+  color: #fff1f6;
+  background: #131016;
+}
+
+/* PRODUCT NAVBAR */
+
+:root[data-theme="dark"] .alv-product-nav {
+  background: #100d12;
+  border-bottom-color: rgba(255, 110, 153, 0.15);
+}
+
+:root[data-theme="dark"] .alv-product-brand {
+  color: #fff1f6;
+}
+
+:root[data-theme="dark"] .alv-product-nav-links a,
+:root[data-theme="dark"] .alv-product-footer a {
+  color: #c1adba;
+}
+
+:root[data-theme="dark"] .alv-product-nav-links a:hover,
+:root[data-theme="dark"] .alv-product-footer a:hover {
+  color: #ff719c;
+}
+
+/* HERO SECTION */
+
+:root[data-theme="dark"] .alv-product-hero {
+  background:
+    radial-gradient(
+      ellipse at 85% 50%,
+      rgba(255, 87, 135, 0.15),
+      transparent 42%
+    ),
+    linear-gradient(
+      115deg,
+      #100d12 5%,
+      #171119 58%,
+      #24131e 100%
+    );
+}
+
+:root[data-theme="dark"] .alv-product-hero-copy h1 {
+  color: #fff1f6;
+}
+
+:root[data-theme="dark"] .alv-product-hero-copy > p {
+  color: #c1adba;
+}
+
+:root[data-theme="dark"] .alv-product-status {
+  color: #c1adba;
+}
+
+/* HERO VISUAL */
+
+:root[data-theme="dark"] .alv-product-glow {
+  background: radial-gradient(
+    circle,
+    rgba(255, 93, 139, 0.2) 0%,
+    rgba(255, 92, 145, 0.08) 42%,
+    transparent 72%
+  );
+}
+
+:root[data-theme="dark"] .alv-product-image-frame {
+  background: rgba(35, 25, 35, 0.8);
+  border-color: rgba(255, 110, 153, 0.16);
+  box-shadow: 0 25px 75px rgba(0, 0, 0, 0.3);
+}
+
+:root[data-theme="dark"] .alv-product-floating-card {
+  background: #241923;
+  border-color: rgba(255, 110, 153, 0.2);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+:root[data-theme="dark"] .alv-product-floating-card strong {
+  color: #fff1f6;
+}
+
+:root[data-theme="dark"] .alv-product-floating-card div span {
+  color: #b9a5b1;
+}
+
+/* INTRODUCTION SECTION */
+
+:root[data-theme="dark"] .alv-product-intro {
+  background: #131016;
+}
+
+:root[data-theme="dark"] .alv-product-intro-heading h2,
+:root[data-theme="dark"] .alv-product-partner-copy h2,
+:root[data-theme="dark"] .alv-product-download h2 {
+  color: #fff1f6;
+}
+
+:root[data-theme="dark"] .alv-product-intro-heading p,
+:root[data-theme="dark"] .alv-product-partner-copy > p {
+  color: #c1adba;
+}
+
+:root[data-theme="dark"] .alv-product-audience {
+  background: #211923;
+  border-color: rgba(255, 110, 153, 0.2);
+}
+
+:root[data-theme="dark"] .alv-product-audience h3 {
+  color: #fff1f6;
+}
+
+/* FEATURES SECTION */
+
+:root[data-theme="dark"] .alv-product-features {
+  background: #171119;
+}
+
+:root[data-theme="dark"] .alv-product-features .alv-service-card {
+  color: #fff1f6;
+  background: #211923;
+  border-color: rgba(255, 110, 153, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+:root[data-theme="dark"] .alv-product-features .alv-service-card:hover {
+  border-color: rgba(255, 92, 145, 0.4);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.3);
+}
+
+:root[data-theme="dark"] .alv-product-features .alv-service-card h3 {
+  color: #fff1f6;
+}
+
+:root[data-theme="dark"] .alv-product-features .alv-service-card p {
+  color: #c1adba;
+}
+
+:root[data-theme="dark"] .alv-product-features .alv-service-icon {
+  color: #ff719c;
+  background: linear-gradient(145deg, #432032, #321a29);
+}
+
+/* HOW IT WORKS */
+
+:root[data-theme="dark"] .alv-product-process {
+  background: #131016;
+}
+
+:root[data-theme="dark"] .alv-product-steps .alv-product-step {
+  background: #1c1620;
+  border-color: rgba(255, 110, 153, 0.15);
+}
+
+:root[data-theme="dark"] .alv-product-step:hover {
+  border-color: rgba(255, 92, 145, 0.45);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+:root[data-theme="dark"] .alv-step-number {
+  color: #ff719c;
+}
+
+:root[data-theme="dark"] .alv-product-step h3 {
+  color: #fff1f6;
+}
+
+:root[data-theme="dark"] .alv-product-step p {
+  color: #c1adba;
+}
+
+/* PARTNERS SECTION */
+
+:root[data-theme="dark"] .alv-product-partners {
+  background: linear-gradient(
+    120deg,
+    #171119,
+    #24131e
+  );
+}
+
+:root[data-theme="dark"] .alv-product-partner-copy li {
+  color: #e2d2dc;
+}
+
+:root[data-theme="dark"] .alv-product-partner-copy li span {
+  color: #fff;
+  background: linear-gradient(135deg, #ed1745, #ff5c91);
+}
+
+/* APP DOWNLOAD SECTION */
+/* Preserve original pink brand gradient */
+
+:root[data-theme="dark"] .alv-product-download {
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(255, 255, 255, 0.15),
+      transparent 55%
+    ),
+    linear-gradient(
+      120deg,
+      #a90c35,
+      #ed1745 60%,
+      #ff5988
+    );
+}
+
+:root[data-theme="dark"] .alv-product-download .alv-eyebrow {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+:root[data-theme="dark"] .alv-product-download h2,
+:root[data-theme="dark"] .alv-product-download > p {
+  color: #fff;
+}
+
+:root[data-theme="dark"] .alv-store-button {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* FOOTER */
+
+:root[data-theme="dark"] .alv-product-footer {
+  background: #100d12;
+  border-top: 1px solid rgba(255, 110, 153, 0.15);
+}
+
+:root[data-theme="dark"] .alv-product-footer p,
+:root[data-theme="dark"] .alv-product-footer small {
+  color: #a997a3;
+}
+
+/* SHARED EYEBROW */
+
+:root[data-theme="dark"] .alv-product-page .alv-eyebrow {
+  color: #ff789f;
+  background: rgba(255, 72, 125, 0.12);
+  border-color: rgba(255, 110, 153, 0.2);
+}
+
+/* KEEP DOWNLOAD EYEBROW WHITE */
+
+:root[data-theme="dark"] .alv-product-download .alv-eyebrow {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* SMOOTH THEME TRANSITIONS */
+
+:root[data-theme="dark"] .alv-product-nav,
+:root[data-theme="dark"] .alv-product-intro,
+:root[data-theme="dark"] .alv-product-features,
+:root[data-theme="dark"] .alv-product-process,
+:root[data-theme="dark"] .alv-product-partners,
+:root[data-theme="dark"] .alv-product-footer,
+:root[data-theme="dark"] .alv-product-audience,
+:root[data-theme="dark"] .alv-product-step,
+:root[data-theme="dark"] .alv-product-image-frame,
+:root[data-theme="dark"] .alv-product-floating-card,
+:root[data-theme="dark"] .alv-product-features .alv-service-card {
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}

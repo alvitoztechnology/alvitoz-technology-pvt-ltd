@@ -1884,3 +1884,26 @@
     transform: none;
   }
 }
+
+.portfolio-image-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.portfolio-image-card .portfolio-project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 0.3s ease;
+}
+
+.portfolio-image-card:hover .portfolio-project-link {
+  gap: 14px;
+}
+
+.portfolio-image-card:focus-visible {
+  outline: 2px solid #ed1745;
+  outline-offset: 5px;
+}

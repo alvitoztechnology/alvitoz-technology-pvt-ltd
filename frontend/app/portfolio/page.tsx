@@ -14,45 +14,42 @@ const projects = [
   {
     number: "01",
     category: "SOFTWARE APPLICATION",
-  title: "Foodvito – Food Ordering & Delivery Platform",
-  description:
-    "A customer-focused food ordering platform designed to connect customers with restaurants through convenient ordering and delivery services. Built around a low-commission model to help food businesses retain more earnings while making great food more accessible to customers.",
-  tags: ["FoodTech", "Online Ordering"],
-  image: "/images/foodvito.png",
-  imageAlt: "Foodvito food ordering and delivery application"
+    title: "Foodvito – Food Ordering & Delivery Platform",
+    slug: "foodvito",
+    description: "A customer-focused food ordering platform designed to connect customers with restaurants through convenient ordering and delivery services. Built around a low-commission model to help food businesses retain more earnings while making great food more accessible to customers.",
+    tags: ["FoodTech", "Online Ordering"],
+    image: "/images/foodvito.png",
+    imageAlt: "Foodvito food ordering and delivery application",
   },
   {
     number: "02",
     category: "SOFTWARE APPLICATION",
     title: "Ravito – Ride Booking & Transportation Platform",
-    description:
-      "A customer-focused transportation platform designed to make everyday travel affordable, convenient, and reliable. Built around a low-commission business model, Ravito aims to help drivers earn more while providing customers with accessible ride-booking services as an alternative to traditional platforms.",
+    slug: "ravito",
+    description: "A customer-focused transportation platform designed to make everyday travel affordable, convenient, and reliable. Built around a low-commission business model, Ravito aims to help drivers earn more while providing customers with accessible ride-booking services as an alternative to traditional platforms.",
     tags: ["Ride Booking", "Transportation"],
     image: "/images/ravito.png",
-    imageAlt: "Ravito ride booking and transportation application"
-    
+    imageAlt: "Ravito ride booking application",
   },
   {
     number: "03",
     category: "SOFTWARE APPLICATION",
-  title: "VitoMart – Online Shopping & Essentials Platform",
-  description:
-    "A customer-focused shopping platform designed to connect customers with local shops and make everyday essentials easily accessible. Built around a low-commission business model, VitoMart aims to help shop owners retain more earnings while providing customers with a convenient, affordable, and seamless shopping experience.",
-  tags: ["E-Commerce", "Local Shopping"],
-  image: "/images/vitomart.png",
-  imageAlt: "VitoMart online shopping and local store delivery application"
+    title: "VitoMart – Online Shopping & Essentials Platform",
+    slug: "vitomart",
+    description: "A customer-focused shopping platform designed to connect customers with local shops and make everyday essentials easily accessible. Built around a low-commission business model, VitoMart aims to help shop owners retain more earnings while providing customers with a convenient, affordable, and seamless shopping experience.",
+    tags: ["E-Commerce", "Local Shopping"],
+    image: "/images/vitomart.png",
+    imageAlt: "VitoMart shopping application",
   },
   {
     number: "04",
+    category: "SOFTWARE APPLICATION",
     title: "Dravito – Unified Rider & Delivery Management Platform",
-  description:
-    "A unified rider application designed to connect delivery partners across Foodvito, Ravito, and VitoMart through a single platform. Dravito aims to simplify order management, streamline delivery workflows, and help riders access delivery opportunities across multiple services, reducing app switching and improving earning potential.",
-  tags: [
-    "Multi-Platform Integration",
-    "Delivery Management"
-  ],
-  image: "/images/dravito.png",
-  imageAlt: "Dravito unified rider and delivery management application"
+    slug: "dravito",
+    description: "A unified rider application designed to connect delivery partners across Foodvito, Ravito, and VitoMart through a single platform. Dravito aims to simplify order management, streamline delivery workflows, and help riders access delivery opportunities across multiple services, reducing app switching and improving earning potential.",
+    tags: ["Multi-Platform Integration", "Delivery Management"],
+    image: "/images/dravito.png",
+    imageAlt: "Dravito rider application",
   },
 ];
 
@@ -116,11 +113,13 @@ export default function PortfolioPage() {
         </div>
 
         
-<div className="portfolio-grid portfolio-image-grid">
+        <div className="portfolio-grid portfolio-image-grid">
   {projects.map((project) => (
-    <article
+    <Link
+      href={`/portfolio/${project.slug}`}
       className="project-card portfolio-image-card"
       key={project.number}
+      aria-label={`Explore ${project.title}`}
     >
       <div className="portfolio-image-wrap">
         <Image
@@ -135,7 +134,6 @@ export default function PortfolioPage() {
           {project.number}
         </span>
 
-        {/* Premium Coming Soon overlay */}
         <div className="portfolio-coming-soon">
           <div className="portfolio-coming-soon-badge">
             <span className="portfolio-coming-soon-dot" />
@@ -151,6 +149,7 @@ export default function PortfolioPage() {
         </span>
 
         <h3>{project.title}</h3>
+
         <p>{project.description}</p>
 
         <div className="service-tags">
@@ -161,11 +160,11 @@ export default function PortfolioPage() {
           ))}
         </div>
 
-        <Link href="/contact" className="portfolio-project-link">
-          Discuss a Similar Project <span>↗</span>
-        </Link>
+        <span className="portfolio-project-link">
+          Explore Product <span>↗</span>
+        </span>
       </div>
-    </article>
+    </Link>
   ))}
 </div>
 

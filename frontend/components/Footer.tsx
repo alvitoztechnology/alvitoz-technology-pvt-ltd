@@ -1,6 +1,5 @@
 
 import Link from "next/link";
-
 import { ArrowRight } from "lucide-react";
 
 import "./Footer.css";
@@ -24,16 +23,33 @@ const serviceLinks = [
 ];
 
 const socialLinks = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/", symbol: "in" },
-  { label: "Twitter", href: "https://x.com/AlvitozTech", symbol: "𝕏" },
-  { label: "Instagram", href: "https://www.instagram.com/alvitoztechnology/?hl=en", symbol: "◎" },
-  { label: "Facebook", href: "https://www.facebook.com/profile.php?id=61595599454359", symbol: "f" },
-  // { label: "YouTube", href: "https://www.youtube.com/", symbol: "▶" },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/",
+    symbol: "in",
+  },
+  {
+    label: "Twitter",
+    href: "https://x.com/AlvitozTech",
+    symbol: "𝕏",
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/alvitoztechnology/?hl=en",
+    symbol: "◎",
+  },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/profile.php?id=61595599454359",
+    symbol: "f",
+  },
 ];
 
 export default function Footer() {
   return (
     <footer className="footer">
+
+      {/* Background decoration */}
       <div className="footer-globe" aria-hidden="true">
         <div className="footer-globe-sphere" />
         <span className="footer-orbit footer-orbit-one" />
@@ -41,11 +57,11 @@ export default function Footer() {
       </div>
 
       <div className="footer-main">
+
         {/* Brand column */}
         <div className="footer-brand-column">
-          <Link href="/" className="footer-brand">
-            {/* <span className="footer-brand-mark">A</span> */}
 
+          <Link href="/" className="footer-brand">
             <span className="footer-brand-text">
               <strong>ALVITOZ</strong>
               <small>TECHNOLOGY</small>
@@ -63,24 +79,27 @@ export default function Footer() {
             <ArrowRight size={15} strokeWidth={1.8} />
           </Link>
 
+          {/* Social links */}
           <div className="footer-socials">
-  {socialLinks.map((social) => (
-    <a
-      key={social.label}
-      href={social.href}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={social.label}
-      className="footer-social-link"
-    >
-      <span>{social.symbol}</span>
-    </a>
-  ))}
-</div>
+            {socialLinks.map((social) => (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+                className="footer-social-link"
+              >
+                <span>{social.symbol}</span>
+              </a>
+            ))}
+          </div>
+
         </div>
 
         {/* Quick links */}
         <div className="footer-column footer-quick-links">
+
           <h3>Quick Links</h3>
 
           <nav aria-label="Quick links">
@@ -90,10 +109,12 @@ export default function Footer() {
               </Link>
             ))}
           </nav>
+
         </div>
 
         {/* Services */}
         <div className="footer-column footer-services">
+
           <h3>Services</h3>
 
           <nav aria-label="Our services">
@@ -103,14 +124,17 @@ export default function Footer() {
               </Link>
             ))}
           </nav>
+
         </div>
+
       </div>
 
-      {/* Bottom copyright bar */}
+      {/* Copyright */}
       <div className="footer-bottom">
-        <p>© 2026 Alvitoz Technology. All rights reserved.</p>
+      <p>© 2026 Alvitoz Technology. All rights reserved.</p>
         <p>Innovate. Build. Grow.</p>
       </div>
+
     </footer>
   );
 }

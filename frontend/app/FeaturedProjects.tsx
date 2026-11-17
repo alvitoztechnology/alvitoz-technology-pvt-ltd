@@ -8,6 +8,7 @@ import { useCallback, useEffect, useState } from "react";
 
 type Project = {
   name: string;
+  slug: string;
   type: string;
   image: string;
   description: string;
@@ -78,35 +79,44 @@ export default function FeaturedProjects({ projects }: Props) {
 <div className="alv-carousel">
   <div className="alv-carousel-viewport" ref={emblaRef}>
     <div className="alv-carousel-track">
-      {projects.map((project) => (
-        <article className="alv-project-card" key={project.name}>
-          <Link href="/portfolio" className="alv-project-image">
-            <Image
-              src={project.image}
-              alt={project.name}
-              width={380}
-              height={230}
-            />
-             {/* Coming Soon Hover Overlay */}
-  <span className="alv-coming-soon">
-    <span className="alv-coming-soon-badge">
-      <span className="alv-coming-soon-dot" />
-      COMING SOON
-    </span>
-  </span>
-          </Link>
+    {projects.map((project) => (
+  <Link
+    href={`/portfolio/${project.slug}`}
+    className="alv-project-card"
+    key={project.slug}
+    aria-label={`Explore ${project.name} project`}
+  >
+    <div className="alv-project-image">
+      <Image
+        src={project.image}
+        alt={project.name}
+        width={380}
+        height={230}
+      />
 
-          <div className="alv-project-copy">
-            <span className="alv-project-type">{project.type}</span>
-            <h3>{project.name}</h3>
-            <p>{project.description}</p>
+      <span className="alv-coming-soon">
+        <span className="alv-coming-soon-badge">
+          <span className="alv-coming-soon-dot" />
+          COMING SOON
+        </span>
+      </span>
+    </div>
 
-            <Link href="/portfolio" className="alv-text-link">
-              View Project <span>→</span>
-            </Link>
-          </div>
-        </article>
-      ))}
+    <div className="alv-project-copy">
+      <span className="alv-project-type">
+        {project.type}
+      </span>
+
+      <h3>{project.name}</h3>
+
+      <p>{project.description}</p>
+
+      <span className="alv-text-link">
+        View Project <span>→</span>
+      </span>
+    </div>
+  </Link>
+))}
     </div>
   </div>
 
